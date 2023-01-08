@@ -4,27 +4,25 @@ import streamlit_authenticator as stauth
 from tools import dev_user_session_choice
 from tools import dev_database_interactions
 
-
-with open("dunno.yaml") as file:
+def custom_authenticate():
+    with open("dunno.yaml") as file:
         config = yaml.load(file, Loader=yaml.SafeLoader)
 
-credentials = dev_database_interactions.get_config_cred()
-
-def custom_authenticate():
+    credentials = dev_database_interactions.get_config_cred()
         # new session state variable
-        st.session_state["authenticator"] = stauth.Authenticate( 
-            credentials,
-            config['cookie']['name'],
-            config['cookie']['key'],
-            config['cookie']['expiry_days'],
-            config['preauthorized']
-        )
+    st.session_state["authenticator"] = stauth.Authenticate( 
+        credentials,
+        config['cookie']['name'],
+        config['cookie']['key'],
+        config['cookie']['expiry_days'],
+        config['preauthorized']
+    )
 
-        # new session state variables
-        st.session_state["name"]\
-            , st.session_state["authentication_status"]\
-            , st.session_state["username"] =\
-             st.session_state["authenticator"].login('Login', 'main')
+    # new session state variables
+    st.session_state["name"]\
+        , st.session_state["authentication_status"]\
+        , st.session_state["username"] =\
+            st.session_state["authenticator"].login('Login', 'main')
 
 def custom_user_logged_in():
     # backend
