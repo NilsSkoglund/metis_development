@@ -2,9 +2,6 @@ import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 from tools import dev_database_interactions
 
-dct_wells = st.session_state["dct_wells"]
-name_wells = st.session_state["name_wells"]
-
 if "authentication_status" not in st.session_state:
     st.button("Logga in"
                 , key = "login_page2")
@@ -29,6 +26,9 @@ else:
     st.write("Starttid:", st.session_state["db"]\
                             .get(st.session_state['db_session_key'])\
                             .get("starttime"))
+
+    dct_wells = st.session_state["dct_wells"]
+    name_wells = st.session_state["name_wells"]
 
     dev_database_interactions.\
         set_session_state_for_questionnaire_from_db(name_wells)
