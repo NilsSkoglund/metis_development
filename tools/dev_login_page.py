@@ -2,14 +2,18 @@ import yaml
 import streamlit as st
 import streamlit_authenticator as stauth
 from tools import dev_user_session_choice
+from tools import dev_database_interactions
+
 
 with open("dunno.yaml") as file:
         config = yaml.load(file, Loader=yaml.SafeLoader)
 
+credentials = dev_database_interactions.get_config_cred()
+
 def custom_authenticate():
         # new session state variable
         st.session_state["authenticator"] = stauth.Authenticate( 
-            config['credentials'],
+            credentials,
             config['cookie']['name'],
             config['cookie']['key'],
             config['cookie']['expiry_days'],
@@ -54,6 +58,8 @@ def custom_register_user():
         if st.session_state["authenticator"]\
         .register_user('Register user', preauthorization=False):
             st.success('User registered successfully')
+            dev_database_interactions.register_new_user_in_db()
+
             with open('dunno.yaml', 'w') as file:
                 yaml.dump(config, file, default_flow_style=False)    
     except Exception as e:

@@ -3,18 +3,22 @@ import streamlit as st
 import time
 from tools import dev_login_page
 from tools import dev_init_session_state_vars
+from tools import dev_database_interactions
+
 
 st.write("hejsana")
 
+#st.write(st.session_state["config_cred"])
 
 dev_init_session_state_vars.init_session_state()
 
 dev_login_page.custom_authenticate()
 
+
 if st.session_state["authentication_status"]:
     # litet hack för bättre ui/ux
     time.sleep(1)
-    st.write(st.session_state["authenticator"].key)
+
     # frontend
     st.session_state["authenticator"].logout('Logout', 'main')
     # litet hack för bättre ui/ux

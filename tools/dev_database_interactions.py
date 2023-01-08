@@ -102,3 +102,45 @@ def perc_update_db():
                             {name_perc:temp_dct_perc}\
                             , key=st.session_state["db_session_key"])
     time.sleep(0.5)
+
+def get_list_usernames_in_db():
+    db = st.session_state["deta"].Base("users_db")
+    items = get_all_items_from_db(db)
+    usernames = [i.get("key") for i in items]
+    return usernames
+
+def get_username_new_user():
+    usernames_in_authenticator =\
+         st.session_state["authenticator"].credentials["usernames"].keys()
+    usernames_in_db = get_list_usernames_in_db()
+    new_user = set(usernames_in_authenticator)\
+                 - set(usernames_in_db)
+    new_user = list(new_user)[0]
+
+    return new_user
+
+    
+def register_new_user_in_db():
+    new_user = get_username_new_user()
+
+    db = st.session_state["deta"].Base("users_db")
+
+    user_credentials = st.session_state["authenticator"]\
+                        .credentials["usernames"]\
+                        [new_user]
+
+    db.put(user_credentials, key=new_user)
+
+def get_config_cred():
+    db = st.session_state["deta"].Base("users_db")
+    items = get_all_items_from_db(db)
+
+    temp_dct = {}
+    for i in items:
+        key = i.get("key")
+        value = {"email": i.get("email")
+                    , "name": i.get("name")
+                    , "password": i.get("password")}
+        temp_dct[key] = value
+
+    return {"usernames": temp_dct}
