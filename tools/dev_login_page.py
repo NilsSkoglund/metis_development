@@ -1,7 +1,7 @@
 import yaml
 import streamlit as st
 import streamlit_authenticator as stauth
-from tools import test_user_session_choice
+from tools import dev_user_session_choice
 
 with open("dunno.yaml") as file:
         config = yaml.load(file, Loader=yaml.SafeLoader)
@@ -34,15 +34,15 @@ def custom_user_logged_in():
     
     st.checkbox("Starta ny session", key="start_new_session") # new session state variable
     if st.session_state["start_new_session"]:
-        test_user_session_choice.start_new_session()
+        dev_user_session_choice.start_new_session()
 
     st.checkbox("Fortsätt på senaste", key="continue_most_recent_session") # new session state variable
     if st.session_state["continue_most_recent_session"]:
-        test_user_session_choice.continue_most_recent_session()
+        dev_user_session_choice.continue_most_recent_session()
 
     st.checkbox("Välj från lista", key="choose_session_from_list") # new session state variable
     if st.session_state["choose_session_from_list"]:
-        test_user_session_choice.choose_session_from_list()
+        dev_user_session_choice.choose_session_from_list()
 
 def custom_register_user():
     try:

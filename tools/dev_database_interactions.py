@@ -86,7 +86,7 @@ def wells_update_db():
 
     temp_dct_perc = {}
     for i, j in enumerate(dct_perc):
-        if i <= 5: 
+        if i <= 4: 
             key_perc = f"{name_perc}_{i}"
             key_wells = f"{name_wells}_{i}"
             temp_dct_perc[key_perc] = st.session_state[key_wells]

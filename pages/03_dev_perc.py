@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
-from tools import test_database_interactions
+from tools import dev_database_interactions
 
 
 dct_perc = {
@@ -48,7 +48,7 @@ else:
 
     st.header("Formulär: PERC")
 
-    test_database_interactions.\
+    dev_database_interactions.\
         set_session_state_for_questionnaire_from_db(name_perc)
 
     # create checkboxes
@@ -57,6 +57,6 @@ else:
         st.checkbox(
             j[0]\
             ,key=perc_x\
-            , on_change=test_database_interactions.perc_update_db\
+            , on_change=dev_database_interactions.perc_update_db\
             #, args=(lungemboli_x,)\
             )

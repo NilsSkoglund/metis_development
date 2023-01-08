@@ -1,6 +1,6 @@
 import datetime
 import streamlit as st
-from tools import test_database_interactions
+from tools import dev_database_interactions
 from streamlit_extras.switch_page_button import switch_page
 
 # om användare har loggat in
@@ -60,7 +60,7 @@ def start_new_session():
     # before entering the session / going to the next page
     if st.session_state["new_session_next_page"]:
         # call function to create record of session in db
-        test_database_interactions.register_new_session_in_db()
+        dev_database_interactions.register_new_session_in_db()
         st.write("Haj")
 
         # Finished, move on to page 2 with wells
@@ -68,7 +68,7 @@ def start_new_session():
 
 def continue_most_recent_session():
     # get all records from db
-    all_items = test_database_interactions.\
+    all_items = dev_database_interactions.\
                 get_all_items_from_db(st.session_state["db"])
 
     if len(all_items) == 0:
@@ -94,7 +94,7 @@ def continue_most_recent_session():
 
 
 def choose_session_from_list():
-    all_items = test_database_interactions.\
+    all_items = dev_database_interactions.\
         get_all_items_from_db(st.session_state["db"])
     if len(all_items) == 0:
         st.info("Det finns inga sessioner kopplade till denna användare.\

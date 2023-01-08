@@ -1,12 +1,12 @@
 from deta import Deta
 import streamlit as st
 import time
-from tools import test_login_page
+from tools import dev_login_page
 
 # Connect to Deta Base with your Project Key
 st.session_state["deta"] = Deta(st.secrets["deta_key"])
 
-test_login_page.custom_authenticate()
+dev_login_page.custom_authenticate()
 
 if st.session_state["authentication_status"]:
     # litet hack för bättre ui/ux
@@ -24,7 +24,7 @@ if st.session_state["authentication_status"]:
     st.session_state["db"] =\
     st.session_state["deta"].Base(st.session_state["username"])
 
-    test_login_page.custom_user_logged_in()
+    dev_login_page.custom_user_logged_in()
 
 # frontend
     # fel inloggningsuppgifter
@@ -41,4 +41,4 @@ if st.session_state["authentication_status"] == None:
         # widget - new session state variable
     st.checkbox("Registrera", key="register_user")
     if st.session_state["register_user"]:
-        test_login_page.custom_register_user()
+        dev_login_page.custom_register_user()
