@@ -9,7 +9,7 @@ def custom_authenticate():
         config = yaml.load(file, Loader=yaml.SafeLoader)
 
     credentials = dev_database_interactions.get_config_cred()
-        # new session state variable
+    # new session state variable
     st.session_state["authenticator"] = stauth.Authenticate( 
         credentials,
         config['cookie']['name'],
