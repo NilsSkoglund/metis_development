@@ -42,15 +42,13 @@ def start_new_session():
     if st.session_state["session_name_from_user"]:
             st.session_state["session_name"] =\
                  st.session_state["session_name_from_user"]
-            st.info(f"Tryck gå vidare för att påbörja sessionen.\
-                 Sessionen sparas som:\
+            st.info(f"Sessionen sparas som:\
                  {st.session_state['session_name']}\
                  | {st.session_state['time_session_start_str']}")
     
     # If user decides to keep the generic name
     else:
-        st.info(f"Tryck gå vidare för att påbörja sessionen.\
-                Session sparas som:\
+        st.info(f"Session sparas som:\
                 Patient nummer {daily_session_no} för dagen\
                 | {st.session_state['time_session_start_str']}]")
     
