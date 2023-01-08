@@ -33,16 +33,20 @@ if st.session_state["authentication_status"]:
 if st.session_state["authentication_status"] == False:
     st.error('Username/password is incorrect')
 
+    # frontend/backend
+    # användare väljar att registrera ny profil
+    # widget - new session state variable
+    st.checkbox("Registrera", key="register_user_v1")
+    if st.session_state["register_user_v1"]:
+        dev_login_page.custom_register_user()
 # frontend
     # ej angett inloggningsuppgifter
 if st.session_state["authentication_status"] == None:
     st.warning('Please enter your username and password')
 
-# frontend/backend
+    # frontend/backend
     # användare väljar att registrera ny profil
     # widget - new session state variable
-if st.session_state["authentication_status"] == False | \
-    st.session_state["authentication_status"] == None:
-    st.checkbox("Registrera", key="register_user")
-    if st.session_state["register_user"]:
+    st.checkbox("Registrera", key="register_user_v2")
+    if st.session_state["register_user_v2"]:
         dev_login_page.custom_register_user()
