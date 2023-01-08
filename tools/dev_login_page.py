@@ -56,9 +56,6 @@ def custom_register_user():
         if st.session_state["authenticator"]\
         .register_user('Register user', preauthorization=False):
             st.success('User registered successfully')
-            dev_database_interactions.register_new_user_in_db()
-
-            with open('dunno.yaml', 'w') as file:
-                yaml.dump(config, file, default_flow_style=False)    
+            dev_database_interactions.register_new_user_in_db()   
     except Exception as e:
         st.error(e)
