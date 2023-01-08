@@ -2,9 +2,6 @@ import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 from tools import dev_database_interactions
 
-dct_perc = st.session_state["dct_perc"]
-name_perc = st.session_state["name_perc"]
-
 if "authentication_status" not in st.session_state:
     st.button("Logga in"
                 , key = "login_page3")
@@ -30,12 +27,17 @@ else:
                             .get(st.session_state['db_session_key'])\
                             .get("starttime"))
 
+    
+
     with st.expander("Klicka för info"):
         st.info("5 av 8 frågor i PERC ingår i Wells' kriterier för lungemboli.\
         När dessa frågor besvaras i formuläret för Wells'\
         ges de samma svar i PERC-formuläret nedan")
 
     st.header("Formulär: PERC")
+
+    dct_perc = st.session_state["dct_perc"]
+    name_perc = st.session_state["name_perc"]
 
     dev_database_interactions.\
         set_session_state_for_questionnaire_from_db(name_perc)

@@ -38,9 +38,9 @@ if st.session_state["authentication_status"] == False:
 if st.session_state["authentication_status"] == None:
     st.warning('Please enter your username and password')
 
-    # frontend/backend
-        # användare väljar att registrera ny profil
-        # widget - new session state variable
-    st.checkbox("Registrera", key="register_user")
-    if st.session_state["register_user"]:
-        dev_login_page.custom_register_user()
+# frontend/backend
+    # användare väljar att registrera ny profil
+    # widget - new session state variable
+st.checkbox("Registrera", key="register_user")
+if st.session_state["register_user"]:
+    dev_login_page.custom_register_user()

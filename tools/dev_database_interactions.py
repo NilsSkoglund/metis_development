@@ -1,13 +1,12 @@
 import streamlit as st
 import time
 
-dct_wells = st.session_state["dct_wells"]
-name_wells = st.session_state["name_wells"]
-
-dct_perc = st.session_state["dct_perc"]
-name_perc = st.session_state["name_perc"]
-
 def register_new_session_in_db():
+    dct_wells = st.session_state["dct_wells"]
+    name_wells = st.session_state["name_wells"]
+
+    dct_perc = st.session_state["dct_perc"]
+    name_perc = st.session_state["name_perc"]
     # Create temporary dict to use for updating db and include ...
         # date
         # session_starttime
@@ -57,6 +56,12 @@ def set_session_state_for_questionnaire_from_db(questionnaire):
         st.session_state[key] = value
 
 def wells_update_db():
+    dct_wells = st.session_state["dct_wells"]
+    name_wells = st.session_state["name_wells"]
+
+    dct_perc = st.session_state["dct_perc"]
+    name_perc = st.session_state["name_perc"]
+
     temp_dct_wells = {}
     for i, j in enumerate(dct_wells):
         key = f"{name_wells}_{i}"
@@ -86,6 +91,8 @@ def wells_update_db():
     time.sleep(0.5)
 
 def perc_update_db():
+    dct_perc = st.session_state["dct_perc"]
+    name_perc = st.session_state["name_perc"]
     temp_dct_perc = {}
     for i, j in enumerate(dct_perc):
         key = f"{name_perc}_{i}"
