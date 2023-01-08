@@ -2,9 +2,9 @@ from deta import Deta
 import streamlit as st
 import time
 from tools import dev_login_page
+from tools import dev_init_session_state_vars
 
-# Connect to Deta Base with your Project Key
-st.session_state["deta"] = Deta(st.secrets["deta_key"])
+dev_init_session_state_vars.init_session_state()
 
 dev_login_page.custom_authenticate()
 

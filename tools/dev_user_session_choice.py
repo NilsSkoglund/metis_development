@@ -23,8 +23,9 @@ def start_new_session():
                     )+1
     
     # Create session/primary key for db interactions
+    # database unique key - new session state variable
     st.session_state["db_session_key"] =\
-         f"{st.session_state['date_today_str']} {daily_session_no}" # database unique key - new session state variable
+         f"{st.session_state['date_today_str']} {daily_session_no}"
 
     # Create user friendly generic name for session
     # name for session - new session state variable
@@ -38,9 +39,9 @@ def start_new_session():
         , key = "session_name_from_user") # widget - new session state variable
 
     # If user decides to write their own name
-    if st.session_state["session_name_from_user"]: # session state variable
+    if st.session_state["session_name_from_user"]:
             st.session_state["session_name"] =\
-                 st.session_state["session_name_from_user"] # session state variable
+                 st.session_state["session_name_from_user"]
             st.info(f"Tryck gå vidare för att påbörja sessionen.\
                  Sessionen sparas som:\
                  {st.session_state['session_name']}\
@@ -54,7 +55,8 @@ def start_new_session():
                 | {st.session_state['time_session_start_str']}]")
     
     # User is done and presses a button to enter the session / go to next page
-    st.button("Gå vidare", key="new_session_next_page") # widget - new session state variable
+     # widget - new session state variable
+    st.button("Gå vidare", key="new_session_next_page")
 
     # if user presses button, we want to write info for new session to db ...
     # before entering the session / going to the next page
@@ -64,7 +66,7 @@ def start_new_session():
         st.write("Haj")
 
         # Finished, move on to page 2 with wells
-        switch_page("wells")
+        switch_page("dev wells")
 
 def continue_most_recent_session():
     # get all records from db
@@ -90,7 +92,7 @@ def continue_most_recent_session():
         st.session_state["db_session_key"] = most_recent_key
 
         # now move user to next page
-        switch_page("wells")
+        switch_page("dev wells")
 
 
 def choose_session_from_list():
@@ -118,7 +120,7 @@ def choose_session_from_list():
             if label != "Se alternativ":
                 name = label[1]
                 starttime = label[2]
-                return f"{name} | Starttid: {starttime}"
+                return f"{name} | {starttime}"
             else:
                 return label
 
@@ -137,4 +139,4 @@ def choose_session_from_list():
             
             st.write(st.session_state["db_session_key"])
             # now move user to next page
-            switch_page("wells")
+            switch_page("dev wells")

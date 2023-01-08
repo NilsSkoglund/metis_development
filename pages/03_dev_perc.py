@@ -2,19 +2,8 @@ import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 from tools import dev_database_interactions
 
-
-dct_perc = {
-    "Kliniska tecken på DVT": 1,
-    "Tidigare LE/DVT diagnos": 1,
-    "Hjärtfrekvens >100/min": 1,
-    "Hemoptys": 1,
-    "Immobiliserad i >3 dagar / Opererad senaste 4 v.": 1,
-    "Ålder ≥50": 1,
-    "Saturation >94% utan syrgas": 1,
-    "Östrogenbehandling": 1
-    }
-name_perc = "perc"
-
+dct_perc = st.session_state["dct_perc"]
+name_perc = st.session_state["name_perc"]
 
 if "authentication_status" not in st.session_state:
     st.button("Logga in"
@@ -58,5 +47,4 @@ else:
             j[0]\
             ,key=perc_x\
             , on_change=dev_database_interactions.perc_update_db\
-            #, args=(lungemboli_x,)\
             )
