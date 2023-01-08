@@ -14,7 +14,7 @@ dev_login_page.custom_authenticate()
 if st.session_state["authentication_status"]:
     # litet hack för bättre ui/ux
     time.sleep(1)
-    st.write(st.session_state["authenticator"])
+    st.write(st.session_state["authenticator"].credentials)
     # frontend
     st.session_state["authenticator"].logout('Logout', 'main')
     # litet hack för bättre ui/ux
