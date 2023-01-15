@@ -103,35 +103,6 @@ def perc_update_db():
                             , key=st.session_state["db_session_key"])
     time.sleep(0.5)
 
-def get_list_usernames_in_db():
-    db = st.session_state["deta"].Base("users_db")
-    items = get_all_items_from_db(db)
-    usernames = [i.get("key") for i in items]
-    return usernames
-
-def get_username_new_user():
-    usernames_in_authenticator =\
-         st.session_state["authenticator"].credentials["usernames"].keys()
-    usernames_in_db = get_list_usernames_in_db()
-    new_user = set(usernames_in_authenticator)\
-                 - set(usernames_in_db)
-    new_user = list(new_user)[0]
-
-    return new_user
-
-    
-def register_new_user_in_db():
-    users_in_db = get_list_usernames_in_db()
-    logged_in_user = st.session_state["username"]
-    if logged_in_user not in users_in_db:
-        db = st.session_state["deta"].Base("users_db")
-        user_credentials = st.session_state["authenticator"]\
-                        .credentials["usernames"]\
-                        [logged_in_user]
-        db.put(user_credentials, key=logged_in_user)
-    else:
-        pass
-
 def get_config_cred():
     db = st.session_state["deta"].Base("users_db")
     items = get_all_items_from_db(db)
@@ -145,3 +116,34 @@ def get_config_cred():
         temp_dct[key] = value
 
     return {"usernames": temp_dct}
+
+def get_list_usernames_in_db():
+    db = st.session_state["deta"].Base("users_db")
+    items = get_all_items_from_db(db)
+    usernames = [i.get("key") for i in items]
+    return usernames
+
+def get_username_new_user():
+    usernames_in_authenticator =\
+         st.session_state["authenticator"].credentials["usernames"].keys()
+    usernames_in_db = get_list_usernames_in_db()
+    new_user = set(usernames_in_authenticator)\
+                 - set(usernames_in_db)
+    new_user_list = list(new_user)
+
+    return new_user_list
+
+    
+def register_new_user_in_db():
+
+    new_user_list = get_username_new_user()
+    if new_user_list:
+        db = st.session_state["deta"].Base("users_db")
+        for user in new_user_list: 
+            
+            user_credentials = st.session_state["authenticator"]\
+                            .credentials["usernames"]\
+                            [user]
+            db.put(user_credentials, key=user)
+    else:
+        pass
