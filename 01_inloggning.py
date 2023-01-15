@@ -11,7 +11,8 @@ dev_login_page.custom_authenticate()
 if st.session_state["authentication_status"]:
     # litet hack för bättre ui/ux
     time.sleep(1)
-
+    # if new user - credentials to db
+    dev_database_interactions.register_new_user_in_db()
     # frontend
     st.session_state["authenticator"].logout('Logout', 'main')
     # litet hack för bättre ui/ux

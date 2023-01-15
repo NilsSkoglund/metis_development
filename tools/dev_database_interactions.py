@@ -121,15 +121,16 @@ def get_username_new_user():
 
     
 def register_new_user_in_db():
-    new_user = get_username_new_user()
-
-    db = st.session_state["deta"].Base("users_db")
-
-    user_credentials = st.session_state["authenticator"]\
+    users_in_db = get_list_usernames_in_db()
+    logged_in_user = st.session_state["username"]
+    if logged_in_user not in users_in_db:
+        db = st.session_state["deta"].Base("users_db")
+        user_credentials = st.session_state["authenticator"]\
                         .credentials["usernames"]\
-                        [new_user]
-
-    db.put(user_credentials, key=new_user)
+                        [logged_in_user]
+        db.put(user_credentials, key=logged_in_user)
+    else:
+        pass
 
 def get_config_cred():
     db = st.session_state["deta"].Base("users_db")
