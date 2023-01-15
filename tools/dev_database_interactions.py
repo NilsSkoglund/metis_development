@@ -135,7 +135,11 @@ def get_username_new_user():
 
     
 def register_new_user_in_db():
-
+    '''
+    When a new user registers, enter their credentials in the database
+    The new_user_list should only contain the newly registered user...
+    ...but looping through a list adds some robustness to the code
+    '''
     new_user_list = get_username_new_user()
     if new_user_list:
         db = st.session_state["deta"].Base("users_db")
