@@ -5,7 +5,7 @@ from PIL import Image
 
 with st.sidebar:
     st.write("Hej")
-    image = Image.open(f"tågstationer wells.png")
+    image = Image.open(f"pages/tågstationer wells.png")
     st.image(image)
 
 
