@@ -4,7 +4,6 @@ from tools import dev_database_interactions
 from PIL import Image
 
 with st.sidebar:
-    st.write("Hej")
     image = Image.open(f"pages/tågstationer wells.png")
     st.image(image)
 
