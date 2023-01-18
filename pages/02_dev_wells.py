@@ -2,6 +2,9 @@ import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 from tools import dev_database_interactions
 
+with st.sidebar:
+    st.write("Hej")
+
 if "authentication_status" not in st.session_state:
     st.button("Logga in"
                 , key = "login_page2")
