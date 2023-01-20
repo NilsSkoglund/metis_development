@@ -24,18 +24,6 @@ def custom_authenticate():
         , st.session_state["username"] =\
             st.session_state["authenticator"].login('Login', 'main')
 
-    try:
-        username_forgot_pw, email_forgot_password, random_password =\
-             st.session_state["authenticator"]\
-            .forgot_password('Forgot password')
-        if username_forgot_pw:
-            st.success('New password sent securely')
-            # Random password to be transferred to user securely
-        elif username_forgot_pw == False:
-            st.error('Username not found')
-    except Exception as e:
-        st.error(e)
-
 def custom_user_logged_in():
     # backend
         # connect to database
@@ -69,5 +57,18 @@ def custom_register_user():
         .register_user('Register user', preauthorization=False):
             st.success('User registered successfully')   
             dev_database_interactions.register_new_user_in_db()
+    except Exception as e:
+        st.error(e)
+
+def custom_forgot_pw():
+    try:
+        username_forgot_pw, email_forgot_password, random_password =\
+             st.session_state["authenticator"]\
+            .forgot_password('Forgot password')
+        if username_forgot_pw:
+            st.success('New password sent securely')
+            # Random password to be transferred to user securely
+        elif username_forgot_pw == False:
+            st.error('Username not found')
     except Exception as e:
         st.error(e)
