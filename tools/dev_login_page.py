@@ -66,6 +66,8 @@ def custom_forgot_pw():
              st.session_state["authenticator"]\
             .forgot_password('Forgot password')
         if username_forgot_pw:
+            st.write(email_forgot_password)
+            st.write(random_password)
             st.success('New password sent securely')
             # Random password to be transferred to user securely
         elif username_forgot_pw == False:
