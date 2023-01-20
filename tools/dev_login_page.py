@@ -70,6 +70,7 @@ def custom_forgot_pw():
             st.write(random_password)
             st.success('New password sent securely')
             # Random password to be transferred to user securely
+            # ...
         elif username_forgot_pw == False:
             st.error('Username not found')
     except Exception as e:
