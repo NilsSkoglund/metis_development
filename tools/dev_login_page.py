@@ -71,7 +71,7 @@ def custom_forgot_pw():
             send_email_forgot_password(random_password\
                                         , email_forgot_password\
                                         , username_forgot_pw)
-            st.success(f'New password sent to {email_forgot_password}')
+            st.success(f"New password sent to '{email_forgot_password}'")
             # Random password to be transferred to user securely
             # ...
         elif username_forgot_pw == False:
