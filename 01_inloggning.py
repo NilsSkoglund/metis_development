@@ -7,6 +7,8 @@ from tools import dev_init_session_state_vars
 dev_init_session_state_vars.init_session_state()
 dev_login_page.custom_authenticate()
 
+st.write("hej")
+
 if st.session_state["authentication_status"]:
     # litet hack för bättre ui/ux
     time.sleep(1)
