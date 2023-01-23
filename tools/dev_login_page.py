@@ -87,6 +87,7 @@ def send_email_forgot_password(pw, email_receiver, username):
     subject = "Metis Password Reset"
     yag.send(email_receiver, subject, contents)
     if email_receiver.endswith("gmail.com"):
-        st.success(f"New password sent to {email_forgot_password}")
+        st.success(f"Password successfully sent to the email associated with your account")
+        st.write("[Open up Gmail](https://gmail.com/)")
     else:
         st.success(f"Password successfully sent to the email associated with your account")
