@@ -15,8 +15,7 @@ st.button("Send email", key = "send_email")
 if st.session_state["send_email"]:
         
     email_sender = 'metis.dev.noreply@gmail.com'
-    email_password = 'asejhetksaabqkfg'
-    yag = yagmail.SMTP(email_sender, email_password)
+    yag = yagmail.SMTP(email_sender, st.secrets["gmail_pw"])
     email_receiver = 'nils.sverker.skoglund@gmail.com'
     var = "blablabla"
     contents = [f'This is {var} the body, and here is just text']
