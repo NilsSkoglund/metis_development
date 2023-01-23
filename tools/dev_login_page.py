@@ -3,6 +3,8 @@ import streamlit as st
 import streamlit_authenticator as stauth
 from tools import dev_user_session_choice
 from tools import dev_database_interactions
+import yagmail
+
 
 def custom_authenticate():
     with open("dunno.yaml") as file:
@@ -66,12 +68,25 @@ def custom_forgot_pw():
              st.session_state["authenticator"]\
             .forgot_password('Forgot password')
         if username_forgot_pw:
-            st.write(email_forgot_password)
-            st.write(random_password)
-            st.success('New password sent securely')
+            send_email_forgot_password(random_password\
+                                        , email_forgot_password\
+                                        , username_forgot_pw)
+            st.success(f'New password sent to {email_forgot_password}')
             # Random password to be transferred to user securely
             # ...
         elif username_forgot_pw == False:
             st.error('Username not found')
     except Exception as e:
         st.error(e)
+
+
+def send_email_forgot_password(pw, email_receiver, username):
+    email_sender = 'metis.dev.noreply@gmail.com'
+    if st.session_state["send_email"]:
+        yag = yagmail.SMTP(email_sender, st.secrets["gmail_pw"])
+        contents = [f'This is your new password {pw}\
+             for user {username}\
+            /nLog in at https://metis-dev.streamlit.app/']
+        subject = "Metis Password Reset"
+        yag.send(email_receiver, subject, contents)
+
