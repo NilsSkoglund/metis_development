@@ -82,12 +82,14 @@ def custom_forgot_pw():
 def send_email_forgot_password(pw, email_receiver, username):
     email_sender = 'metis.dev.noreply@gmail.com'
     yag = yagmail.SMTP(email_sender, st.secrets["gmail_pw"])
-    contents = [f'This is your new password {pw} \n\
-            for user {username} \nLog in at https://metis-dev.streamlit.app/']
+    contents = [f'This is your new password: {pw} \n\
+            For user: {username} \nLog in at: https://metis-dev.streamlit.app/']
     subject = "Metis Password Reset"
     yag.send(email_receiver, subject, contents)
     if email_receiver.endswith("gmail.com"):
-        st.success(f"Password successfully sent to the email associated with your account")
+        st.success(f"Password successfully sent\
+             to the email associated with your account")
         st.write("[Open up Gmail](https://gmail.com/)")
     else:
-        st.success(f"Password successfully sent to the email associated with your account")
+        st.success(f"Password successfully sent\
+             to the email associated with your account")
