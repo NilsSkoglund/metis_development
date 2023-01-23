@@ -10,23 +10,17 @@ get_keyring()
 dev_init_session_state_vars.init_session_state()
 dev_login_page.custom_authenticate()
 
+st.write("1")
 st.button("Send email", key = "send_email")
 if st.session_state["send_email"]:
         
     email_sender = 'metis.dev.noreply@gmail.com'
     email_password = 'asejhetksaabqkfg'
-
-    yagmail.register(email_sender, email_password)
-
-    yag = yagmail.SMTP(email_sender)
-
+    yag = yagmail.SMTP(email_sender, email_password)
     email_receiver = 'nils.sverker.skoglund@gmail.com'
-
     var = "blablabla"
-
     contents = [f'This is {var} the body, and here is just text']
     yag.send(email_receiver, 'subject', contents)
-
 
 st.write("hej")
 
