@@ -11,7 +11,7 @@ if st.session_state["authentication_status"]:
     # litet hack för bättre ui/ux
     time.sleep(1)
     # frontend
-    dev_login_page.change_password()
+
     st.session_state["authenticator"].logout('Logout', 'main')
     # litet hack för bättre ui/ux
     time.sleep(1)
