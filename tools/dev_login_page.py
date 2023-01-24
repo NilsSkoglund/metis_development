@@ -97,7 +97,7 @@ def send_email_forgot_password(pw, email_receiver, username):
     email_sender = 'metis.dev.noreply@gmail.com'
     yag = yagmail.SMTP(email_sender, st.secrets["gmail_pw"])
     contents = [f'This is your new password: {pw} \n\
-            For user: {username} \nLog in at: https://metis-dev.streamlit.app/']
+        For user: {username} \nLog in at: https://metis-dev.streamlit.app/']
     subject = "Metis Password Reset"
     yag.send(email_receiver, subject, contents)
     dev_database_interactions.update_credentials_in_db(username)
