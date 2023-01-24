@@ -78,6 +78,20 @@ def custom_forgot_pw():
     except Exception as e:
         st.error(e)
 
+def custom_forgot_username():
+    try:
+        username_forgot_username, email_forgot_username =\
+             st.session_state["authenticator"].\
+                forgot_username('Forgot username')
+        if username_forgot_username:
+            st.info(f'Username: {username_forgot_username}')
+            # Username to be transferred to user securely
+        elif username_forgot_username == False:
+            st.error('Email not found')
+    except Exception as e:
+        st.error(e)
+
+
 
 def send_email_forgot_password(pw, email_receiver, username):
     email_sender = 'metis.dev.noreply@gmail.com'
@@ -93,5 +107,6 @@ def send_email_forgot_password(pw, email_receiver, username):
     else:
         st.success(f"Password successfully sent\
              to the email associated with your account")
+
 
 
