@@ -90,7 +90,7 @@ def send_email_forgot_password(pw, email_receiver, username):
         st.success(f"Password successfully sent\
              to [{email_receiver}](https://gmail.com/)")
         st.write(pw)
-        pw_cred = st.session_state["authenticator"]["usernames"][username]
+        pw_cred = st.session_state["authenticator"].credentials["usernames"][username]
         st.write(pw_cred)
     else:
         st.success(f"Password successfully sent\
