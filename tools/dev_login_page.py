@@ -90,8 +90,6 @@ def send_email_forgot_password(pw, email_receiver, username):
     if email_receiver.endswith("gmail.com"):
         st.success(f"Password successfully sent\
              to [{email_receiver}](https://gmail.com/)")
-        st.write(pw)
-        st.write(pw_cred)
     else:
         st.success(f"Password successfully sent\
              to the email associated with your account")
