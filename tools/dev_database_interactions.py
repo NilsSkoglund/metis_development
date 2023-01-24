@@ -151,3 +151,17 @@ def register_new_user_in_db():
             db.put(user_credentials, key=user)
     else:
         pass
+
+def update_credentials_in_db(username):
+    '''
+    Updates credentials for a single user. 
+    Credentials are stored in the autenticator object by username
+    They are stored in the database "users_db" with the username as the key
+    '''
+    db = st.session_state["deta"].Base("users_db")
+
+    user_credentials = st.session_state["authenticator"]\
+                            .credentials["usernames"]\
+                            [username]
+
+    db.put(user_credentials, key=username)

@@ -86,11 +86,11 @@ def send_email_forgot_password(pw, email_receiver, username):
             For user: {username} \nLog in at: https://metis-dev.streamlit.app/']
     subject = "Metis Password Reset"
     yag.send(email_receiver, subject, contents)
+    dev_database_interactions.update_credentials_in_db(username)
     if email_receiver.endswith("gmail.com"):
         st.success(f"Password successfully sent\
              to [{email_receiver}](https://gmail.com/)")
         st.write(pw)
-        pw_cred = st.session_state["authenticator"].credentials["usernames"][username]
         st.write(pw_cred)
     else:
         st.success(f"Password successfully sent\
