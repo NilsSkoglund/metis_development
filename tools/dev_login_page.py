@@ -92,3 +92,12 @@ def send_email_forgot_password(pw, email_receiver, username):
     else:
         st.success(f"Password successfully sent\
              to the email associated with your account")
+
+
+def change_password():
+    try:
+        if st.session_state["authenticator"].reset_password\
+            (st.session_state["username"], 'Reset password'):
+            st.success('Password modified successfully')
+    except Exception as e:
+        st.error(e)
