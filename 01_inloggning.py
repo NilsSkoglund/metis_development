@@ -40,6 +40,10 @@ if st.session_state["authentication_status"] == False:
     st.checkbox("Glömt lösenord", key="forgot_pw_v1")
     if st.session_state["forgot_pw_v1"]:
         dev_login_page.custom_forgot_pw()
+    
+    st.checkbox("Glömt användarnamn", key="forgot_username_v1")
+    if st.session_state["forgot_username_v1"]:
+        dev_login_page.custom_forgot_username()
 # frontend
     # ej angett inloggningsuppgifter
 if st.session_state["authentication_status"] == None:
@@ -55,3 +59,8 @@ if st.session_state["authentication_status"] == None:
     st.checkbox("Glömt lösenord", key="forgot_pw_v2")
     if st.session_state["forgot_pw_v2"]:
         dev_login_page.custom_forgot_pw()
+
+    st.checkbox("Glömt användarnamn", key="forgot_username_v2")
+    if st.session_state["forgot_username_v2"]:
+        dev_login_page.custom_forgot_username()
+
