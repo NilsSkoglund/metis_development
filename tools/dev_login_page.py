@@ -88,7 +88,7 @@ def send_email_forgot_password(pw, email_receiver, username):
     yag.send(email_receiver, subject, contents)
     if email_receiver.endswith("gmail.com"):
         st.success(f"Password successfully sent\
-             to the email associated with your account")
+             to {[email_receiver]}")
         st.write("[Open up Gmail](https://gmail.com/)")
     else:
         st.success(f"Password successfully sent\
