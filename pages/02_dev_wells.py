@@ -22,7 +22,8 @@ elif not st.session_state["authentication_status"]:
     if st.session_state["login_page2_v2"]:
         switch_page("inloggning")
 elif st.session_state["authentication_status"] and\
-"db_session_key" not in st.session_state:
+"db_session_key" not in st.session_state and st.session_state["db"]\
+.get(st.session_state['db_session_key']) != None:
     st.button("Välj session"
                 , key = "choose_session_page2")
     if st.session_state["choose_session_page2"]:
