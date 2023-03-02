@@ -2,6 +2,9 @@ import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 from tools import dev_database_interactions
 from PIL import Image
+from tools import dev_init_session_state_vars
+
+dev_init_session_state_vars.init_session_state()
 
 with st.sidebar:
     image = Image.open(f"pages/tågstationer wells.png")
