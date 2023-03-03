@@ -30,7 +30,7 @@ elif st.session_state["authentication_status"] and\
         switch_page("inloggning")
 else:
     with st.expander("Sessionsinfo"):
-        st.write("**Pågående session:**", st.session_state["db"]\
+        st.write("**Sessionsnamn:**", st.session_state["db"]\
                                 .get(st.session_state['db_session_key'])\
                                 .get("name"))
 
