@@ -93,7 +93,7 @@ def continue_most_recent_session():
                     .get(most_recent_key)\
                     .get("name"))
 
-        st.write("Starttid:", st.session_state["db"]\
+        st.write("**Starttid:**", st.session_state["db"]\
                             .get(most_recent_key)\
                             .get("starttime"))
 
