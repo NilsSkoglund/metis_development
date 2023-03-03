@@ -40,7 +40,7 @@ if st.session_state["authentication_status"] == False:
              , options_credentials
              , key="options_credentials_1"
              , horizontal=True
-             , label_visibility="hidden")
+             , label_visibility="collapsed")
         if st.session_state["options_credentials_1"] == "Glömt lösenord":
             st.info("Ange ditt användarnamn så skickas ett lösenord\
                     till den kopplade emailen.")
@@ -83,7 +83,7 @@ if st.session_state["authentication_status"] == None:
              , options_credentials
              , key="options_credentials_2"
              , horizontal=True
-             , label_visibility="hidden")
+             , label_visibility="collapsed")
         if st.session_state["options_credentials_2"] == "Glömt lösenord":
             st.info("Ange ditt användarnamn så skickas ett lösenord\
                     till den kopplade emailen.")
