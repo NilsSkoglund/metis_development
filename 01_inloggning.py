@@ -3,6 +3,13 @@ import streamlit as st
 import time
 from tools import dev_login_page
 from tools import dev_init_session_state_vars
+st.markdown("""
+    <style>
+    [role=radiogroup]{
+        gap: 2rem;
+    }
+    </style>
+    """,unsafe_allow_html=True)
 
 dev_init_session_state_vars.init_session_state()
 dev_login_page.custom_authenticate()
