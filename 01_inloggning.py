@@ -41,8 +41,11 @@ if st.session_state["authentication_status"] == False:
              , horizontal=True
              , label_visibility="collapsed")
         if st.session_state["options_credentials_1"] == "Glömt lösenord":
+            st.info("Ange ditt användarnamn så skickas ett lösenord\
+                    till den kopplade emailen.")
             dev_login_page.custom_forgot_pw()
         if st.session_state["options_credentials_1"] == "Glömt användarnamn":
+            st.info("Ange den kopplade emailen så visas användarnamnet.")
             dev_login_page.custom_forgot_username()
 
     #if st.session_state["options_inloggning_1"] == "Glömt användarnamn":
