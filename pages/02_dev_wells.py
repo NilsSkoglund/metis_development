@@ -29,6 +29,14 @@ elif st.session_state["authentication_status"] and\
     if st.session_state["choose_session_page2"]:
         switch_page("inloggning")
 else:
+    st.radio(""
+             , ["Pågående", "Avslutad"]
+             , key="wells_radio"
+             , horizontal=True)
+    
+    is_disabled = False
+    if st.session_state["wells_radio"] == "Avslutad":
+        is_disabled = True
     namn = st.session_state["db"]\
                             .get(st.session_state['db_session_key'])\
                             .get("name")
@@ -45,5 +53,6 @@ else:
         st.checkbox(
             j[0]\
             ,key=wells_x\
-            , on_change=dev_database_interactions.wells_update_db\
+            , on_change=dev_database_interactions.wells_update_db
+            , disabled=is_disabled
             )
