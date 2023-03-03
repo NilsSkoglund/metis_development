@@ -25,22 +25,16 @@ elif st.session_state["authentication_status"] and\
     if st.session_state["choose_session_page3"]:
         switch_page("inloggning")
 else:
-    st.write(st.session_state["db"]\
+    namn = st.session_state["db"]\
                             .get(st.session_state['db_session_key'])\
-                            .get("name"))
-
-    st.write("Starttid:", st.session_state["db"]\
-                            .get(st.session_state['db_session_key'])\
-                            .get("starttime"))
-
-    
+                            .get("name")
 
     with st.expander("Klicka för info"):
         st.info("5 av 8 frågor i PERC ingår i Wells' kriterier för lungemboli.\
         När dessa frågor besvaras i formuläret för Wells'\
         ges de samma svar i PERC-formuläret nedan")
 
-    st.header("Formulär: PERC")
+    st.subheader(f"PERC: {namn}")
 
     dct_perc = st.session_state["dct_perc"]
     name_perc = st.session_state["name_perc"]
