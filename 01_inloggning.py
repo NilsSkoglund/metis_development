@@ -8,10 +8,6 @@ dev_init_session_state_vars.init_session_state()
 dev_login_page.custom_authenticate()
 
 if st.session_state["authentication_status"]:
-    time.sleep(1)
-    with st.sidebar:
-        st.session_state["authenticator"].logout('Logout', 'main')
-    # litet hack för bättre ux
     # connect to database
     st.session_state["db"] =\
     st.session_state["deta"].Base(st.session_state["username"])
