@@ -28,7 +28,7 @@ def custom_authenticate():
             st.session_state["authenticator"].login('Login', 'main')
 
 def custom_user_logged_in():
-    col1, col2 = st.columns(5,1)
+    col1, col2 = st.columns([5,1])
 
     with col2:
         st.session_state["authenticator"].logout('Logout', 'main')
