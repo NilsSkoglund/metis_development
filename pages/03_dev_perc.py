@@ -25,6 +25,17 @@ elif st.session_state["authentication_status"] and\
     if st.session_state["choose_session_page3"]:
         switch_page("inloggning")
 else:
+    if "perc_radio_index" not in st.session_state:
+        st.session_state["perc_radio_index"] = 0
+    st.radio(""
+             , ["Pågående", "Avslutad"]
+             , index=st.session_state["perc_radio_index"]
+             , key="perc_radio"
+             , horizontal=True)
+    is_disabled = False
+    if st.session_state["perc_radio"] == "Avslutad":
+        is_disabled = True
+
     namn = st.session_state["db"]\
                             .get(st.session_state['db_session_key'])\
                             .get("name")
@@ -46,7 +57,8 @@ else:
     for i, j in enumerate(dct_perc.items()):
         perc_x = f"{name_perc}_{i}"
         st.checkbox(
-            j[0]\
-            ,key=perc_x\
-            , on_change=dev_database_interactions.perc_update_db\
+            j[0]
+            ,key=perc_x
+            ,disabled=is_disabled
+            , on_change=dev_database_interactions.perc_update_db
             )

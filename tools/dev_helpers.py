@@ -42,4 +42,6 @@ def lungemboli_display_button(total_score):
     elif total_score < 6.5:
         knapp_måttlig = st.button("Ange D-dimer svar")
         if knapp_måttlig:
+            st.session_state["wells_radio_index"] = 1
+            st.session_state["perc_radio_index"] = 1
             switch_page("D-dimer")
