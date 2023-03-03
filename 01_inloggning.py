@@ -23,14 +23,15 @@ if st.session_state["authentication_status"]:
 if st.session_state["authentication_status"] == False:
     st.error('Username/password is incorrect')
 
-    options = ["Logga in", "Registrera", "Glömt lösenord", "Glömt användarnamn"]
+    options = ["Logga in", "Registrera ny användare",
+               "Glömt lösenord", "Glömt användarnamn"]
     #labels = ["Registrera", "Glömt lösenord", "Glömt användarnamn"]
     st.radio("Välj meny"
              , options
              , key="options_inloggning_1"
              , horizontal=True)
     
-    if st.session_state["options_inloggning_1"] == "Registrera":
+    if st.session_state["options_inloggning_1"] == "Registrera ny användare":
         dev_login_page.custom_register_user()
     if st.session_state["options_inloggning_1"] == "Glömt lösenord":
         dev_login_page.custom_forgot_pw()
