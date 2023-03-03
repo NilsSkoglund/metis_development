@@ -33,7 +33,7 @@ def custom_user_logged_in():
         st.subheader(f'Användare: {st.session_state["name"]}')
 
     with col2:
-        st.session_state["authenticator"].logout('Logout', 'main')
+        st.session_state["authenticator"].logout('LLogout', 'main')
     st.write("---")
 
 
