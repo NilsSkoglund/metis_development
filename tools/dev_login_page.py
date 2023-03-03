@@ -28,6 +28,12 @@ def custom_authenticate():
             st.session_state["authenticator"].login('Login', 'main')
 
 def custom_user_logged_in():
+    col1, col2 = st.columns(5,1)
+
+    with col2:
+        st.session_state["authenticator"].logout('Logout', 'main')
+
+
     # connect to database
     st.session_state["db"] =\
     st.session_state["deta"].Base(st.session_state["username"])
@@ -51,7 +57,6 @@ def custom_user_logged_in():
         dev_user_session_choice.choose_session_from_list()
     if st.session_state["session_choice"] == "Logga ut":
         st.subheader(f'{st.session_state["name"]}')
-        st.session_state["authenticator"].logout('Logout', 'main')
 
 def custom_register_user():
     try:
