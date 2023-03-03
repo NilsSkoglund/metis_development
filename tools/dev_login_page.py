@@ -43,15 +43,19 @@ def custom_user_logged_in():
              , horizontal=False
              , label_visibility="collapsed")
     
-    if st.session_state["session_choice"] == "Starta ny session":
-        dev_user_session_choice.start_new_session()
-    if st.session_state["session_choice"] == "Fortsätt på senaste session":
-        dev_user_session_choice.continue_most_recent_session()
-    if st.session_state["session_choice"] == "Välj session från lista":
-        dev_user_session_choice.choose_session_from_list()
-    if st.session_state["session_choice"] == "Logga ut":
-        st.subheader(f'{st.session_state["name"]}')
-        st.session_state["authenticator"].logout('Logout', 'main')
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        if st.session_state["session_choice"] == "Starta ny session":
+            dev_user_session_choice.start_new_session()
+        if st.session_state["session_choice"] == "Fortsätt på senaste session":
+            dev_user_session_choice.continue_most_recent_session()
+        if st.session_state["session_choice"] == "Välj session från lista":
+            dev_user_session_choice.choose_session_from_list()
+    with col2:
+        if st.session_state["session_choice"] == "Logga ut":
+            st.subheader(f'{st.session_state["name"]}')
+            st.session_state["authenticator"].logout('Logout', 'main')
 
 def custom_register_user():
     try:
