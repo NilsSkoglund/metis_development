@@ -33,7 +33,8 @@ def custom_user_logged_in():
 
     options = ["Starta ny session"
                , "Fortsätt på senaste"
-               , "Välj från lista"]
+               , "Välj från lista"
+               , "Min sida"]
     st.radio("Välj meny"
              , options
              , key="session_choice"
@@ -46,6 +47,9 @@ def custom_user_logged_in():
         dev_user_session_choice.continue_most_recent_session()
     if st.session_state["session_choice"] == "Välj från lista":
         dev_user_session_choice.choose_session_from_list()
+    if st.session_state["session_choice"] == "Min sida":
+        st.subheader(f'{st.session_state["name"]}')
+        st.session_state["authenticator"].logout('Logout', 'main')
     
 
     # st.checkbox("Starta ny session", key="start_new_session") 
