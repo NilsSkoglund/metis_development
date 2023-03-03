@@ -34,7 +34,7 @@ else:
         När dessa frågor besvaras i formuläret för Wells'\
         ges de samma svar i PERC-formuläret nedan")
 
-    st.subheader(f"PERC: {namn}")
+    st.subheader(f"PERC - {namn}")
 
     dct_perc = st.session_state["dct_perc"]
     name_perc = st.session_state["name_perc"]
