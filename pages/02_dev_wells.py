@@ -39,7 +39,7 @@ else:
     dev_database_interactions.\
         set_session_state_for_questionnaire_from_db(name_wells)
     
-    st.header(f"Wells' Lungemboli {namn}")
+    st.subheader(f"Wells' Lungemboli: {namn}")
     for i, j in enumerate(dct_wells.items()):
         wells_x = f"{name_wells}_{i}"
         st.checkbox(
