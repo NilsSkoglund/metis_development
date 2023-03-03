@@ -25,7 +25,8 @@ if st.session_state["authentication_status"] == False:
 
     options = ["Logga in", "Registrera", "Glömt lösenord", "Glömt användarnamn"]
     #labels = ["Registrera", "Glömt lösenord", "Glömt användarnamn"]
-    st.radio(options=options
+    st.radio("Välj meny"
+             , options
              , key="options_inloggning_1"
              , horizontal=True)
     
