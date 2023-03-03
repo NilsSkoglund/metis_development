@@ -3,6 +3,7 @@ from streamlit_extras.switch_page_button import switch_page
 from tools import dev_database_interactions
 from PIL import Image
 from tools import dev_init_session_state_vars
+from tools import dev_helpers
 
 dev_init_session_state_vars.init_session_state()
 
@@ -56,3 +57,17 @@ else:
             , on_change=dev_database_interactions.wells_update_db
             , disabled=is_disabled
             )
+        
+    dct_lungemboli = {
+    "Kliniska tecken på DVT": 3,
+    "Tidigare LE/DVT diagnos": 1.5,
+    "Hjärtfrekvens >100/min": 1.5,
+    "Hemoptys": 1,
+    "Immobiliserad i >3 dagar / Opererad senaste 4 v.": 1.5,
+    "LE mer sannolik än annan diagnos": 3,
+    "Malignitet behandlad inom 6 mån alt. palliation": 1
+    }
+
+    total_score = dev_helpers.calc_score(dct_lungemboli, name_wells)
+    dev_helpers.lungemboli_display_button(total_score)
+    dev_helpers.lungemboli_display_lottie(total_score)
