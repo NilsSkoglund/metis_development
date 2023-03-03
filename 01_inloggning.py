@@ -49,21 +49,6 @@ if st.session_state["authentication_status"] == False:
             st.info("Ange den kopplade emailen så visas användarnamnet.")
             dev_login_page.custom_forgot_username()
 
-    #if st.session_state["options_inloggning_1"] == "Glömt användarnamn":
-
-
-    # st.checkbox("Registrera", key="register_user_v1")
-    # if st.session_state["register_user_v1"]:
-    #     dev_login_page.custom_register_user()
-
-    # st.checkbox("Glömt lösenord", key="forgot_pw_v1")
-    # if st.session_state["forgot_pw_v1"]:
-    #     dev_login_page.custom_forgot_pw()
-    
-    # st.checkbox("Glömt användarnamn", key="forgot_username_v1")
-    # if st.session_state["forgot_username_v1"]:
-    #     dev_login_page.custom_forgot_username()
-
 # ej angett inloggningsuppgifter
 if st.session_state["authentication_status"] == None:
     options = ["Logga in", "Registrera ny användare",
@@ -91,18 +76,3 @@ if st.session_state["authentication_status"] == None:
         if st.session_state["options_credentials_2"] == "Glömt användarnamn":
             st.info("Ange den kopplade emailen så visas användarnamnet.")
             dev_login_page.custom_forgot_username()
-# if st.session_state["authentication_status"] == None:
-#     st.warning('Please enter your username and password')
-
-#     st.checkbox("Registrera", key="register_user_v2")
-#     if st.session_state["register_user_v2"]:
-#         dev_login_page.custom_register_user()
-
-#     st.checkbox("Glömt lösenord", key="forgot_pw_v2")
-#     if st.session_state["forgot_pw_v2"]:
-#         dev_login_page.custom_forgot_pw()
-
-#     st.checkbox("Glömt användarnamn", key="forgot_username_v2")
-#     if st.session_state["forgot_username_v2"]:
-#         dev_login_page.custom_forgot_username()
-
