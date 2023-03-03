@@ -28,10 +28,13 @@ def custom_authenticate():
             st.session_state["authenticator"].login('Login', 'main')
 
 def custom_user_logged_in():
-    col1, col2 = st.columns([5,1])
+    col1, col2 = st.columns([10,1])
+    with col1:
+        st.subheader(f'Användare: {st.session_state["name"]}')
 
     with col2:
         st.session_state["authenticator"].logout('Logout', 'main')
+    st.write("---")
 
 
     # connect to database
@@ -41,8 +44,7 @@ def custom_user_logged_in():
 
     options = ["Starta ny session"
                , "Fortsätt på senaste session"
-               , "Välj session från lista"
-               , "Logga ut"]
+               , "Välj session från lista"]
     st.radio("Välj meny"
              , options
              , key="session_choice"
@@ -55,8 +57,6 @@ def custom_user_logged_in():
         dev_user_session_choice.continue_most_recent_session()
     if st.session_state["session_choice"] == "Välj session från lista":
         dev_user_session_choice.choose_session_from_list()
-    if st.session_state["session_choice"] == "Logga ut":
-        st.subheader(f'{st.session_state["name"]}')
 
 def custom_register_user():
     try:
