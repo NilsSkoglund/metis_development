@@ -29,14 +29,9 @@ elif st.session_state["authentication_status"] and\
     if st.session_state["choose_session_page2"]:
         switch_page("inloggning")
 else:
-    with st.expander("Sessionsinfo"):
-        st.write("**Sessionsnamn:**", st.session_state["db"]\
-                                .get(st.session_state['db_session_key'])\
-                                .get("name"))
-
-        st.write("**Starttid:**", st.session_state["db"]\
-                                .get(st.session_state['db_session_key'])\
-                                .get("starttime"))
+    namn = st.session_state["db"]\
+                            .get(st.session_state['db_session_key'])\
+                            .get("name")
 
     dct_wells = st.session_state["dct_wells"]
     name_wells = st.session_state["name_wells"]
@@ -44,7 +39,7 @@ else:
     dev_database_interactions.\
         set_session_state_for_questionnaire_from_db(name_wells)
     
-    st.header("Formulär: Wells' Lungemboli")
+    st.header(f"Wells' Lungemboli {namn}")
     for i, j in enumerate(dct_wells.items()):
         wells_x = f"{name_wells}_{i}"
         st.checkbox(
