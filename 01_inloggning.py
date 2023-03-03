@@ -10,10 +10,6 @@ dev_login_page.custom_authenticate()
 if st.session_state["authentication_status"]:
     # litet hack för bättre ux
     time.sleep(1)
-    st.session_state["authenticator"].logout('Logout', 'main')
-    # litet hack för bättre ux
-    time.sleep(1)
-    st.write(f'Welcome {st.session_state["name"]}')
     # connect to database
     st.session_state["db"] =\
     st.session_state["deta"].Base(st.session_state["username"])
@@ -23,8 +19,10 @@ if st.session_state["authentication_status"]:
 if st.session_state["authentication_status"] == False:
     st.error('Username/password is incorrect')
 
-    options = ["Logga in", "Registrera ny användare",
-               "Glömt inloggningsuppgifter"]
+    options = ["Logga in"
+               , "Registrera ny användare"
+               , "Glömt inloggningsuppgifter"
+               , "Min sida"]
     st.radio("Välj meny"
              , options
              , key="options_inloggning_1"
@@ -48,6 +46,11 @@ if st.session_state["authentication_status"] == False:
         if st.session_state["options_credentials_1"] == "Glömt användarnamn":
             st.info("Ange den kopplade emailen så visas användarnamnet.")
             dev_login_page.custom_forgot_username()
+    if st.session_state["options_inloggning_1"] == "Min sida":
+        st.subheader(f'{st.session_state["name"]}')
+        st.session_state["authenticator"].logout('Logout', 'main')
+        
+    
 
 # ej angett inloggningsuppgifter
 if st.session_state["authentication_status"] == None:
