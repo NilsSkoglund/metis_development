@@ -31,15 +31,10 @@ def custom_user_logged_in():
     with st.expander("Användarprofil"):
         username = st.session_state["username"]
         info = st.session_state["deta"].Base("users_db").get(username)
-        st.subheader(f'Namn: {info["name"]}')
-        st.subheader(f'Användarnamn: {username}')
-        st.subheader(f'Email: {info["email"]}')
+        st.write(f'**Namn:** {info["name"]}')
+        st.write(f'**Användarnamn:** {username}')
+        st.write(f'**Email:** {info["email"]}')
 
-
-        
-        st.subheader(f'Användarnamn: {username}')
-        
-        st.subheader(f'Mail: {st.session_state["db"].get("user")}')
         st.session_state["authenticator"].logout('Logout', 'main')
 
     # connect to database
