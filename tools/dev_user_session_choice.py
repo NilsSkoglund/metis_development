@@ -88,7 +88,7 @@ def continue_most_recent_session():
         # return key for most recent starttime
         most_recent_key = selected_items[0][0]
 
-        st.write("**Namn på session:**", 
+        st.write("**Namn senaste session:**", 
                  st.session_state["db"]\
                     .get(most_recent_key)\
                     .get("name"))
