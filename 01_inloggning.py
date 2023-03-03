@@ -6,7 +6,7 @@ from tools import dev_init_session_state_vars
 st.markdown("""
     <style>
     [role=radiogroup]{
-        gap: 2rem;
+        gap: 0.5rem;
     }
     </style>
     """,unsafe_allow_html=True)
