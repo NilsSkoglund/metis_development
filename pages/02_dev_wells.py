@@ -29,13 +29,14 @@ elif st.session_state["authentication_status"] and\
     if st.session_state["choose_session_page2"]:
         switch_page("inloggning")
 else:
-    st.write("**Pågående session:**", st.session_state["db"]\
-                            .get(st.session_state['db_session_key'])\
-                            .get("name"))
+    with st.expander("Sessionsinfo"):
+        st.write("**Pågående session:**", st.session_state["db"]\
+                                .get(st.session_state['db_session_key'])\
+                                .get("name"))
 
-    st.write("**Starttid:**", st.session_state["db"]\
-                            .get(st.session_state['db_session_key'])\
-                            .get("starttime"))
+        st.write("**Starttid:**", st.session_state["db"]\
+                                .get(st.session_state['db_session_key'])\
+                                .get("starttime"))
 
     dct_wells = st.session_state["dct_wells"]
     name_wells = st.session_state["name_wells"]
