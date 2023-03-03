@@ -4,6 +4,7 @@ import streamlit_authenticator as stauth
 from tools import dev_user_session_choice
 from tools import dev_database_interactions
 import yagmail
+import time
 
 
 def custom_authenticate():
@@ -30,6 +31,7 @@ def custom_user_logged_in():
     # connect to database
     st.session_state["db"] =\
     st.session_state["deta"].Base(st.session_state["username"])
+    time.sleep(1)
 
     options = ["Starta ny session"
                , "Fortsätt på senaste session"
@@ -43,11 +45,11 @@ def custom_user_logged_in():
     
     if st.session_state["session_choice"] == "Starta ny session":
         dev_user_session_choice.start_new_session()
-    if st.session_state["session_choice"] == "Fortsätt på senaste":
+    if st.session_state["session_choice"] == "Fortsätt på senaste session":
         dev_user_session_choice.continue_most_recent_session()
-    if st.session_state["session_choice"] == "Välj från lista":
+    if st.session_state["session_choice"] == "Välj session från lista":
         dev_user_session_choice.choose_session_from_list()
-    if st.session_state["session_choice"] == "Min sida":
+    if st.session_state["session_choice"] == "Logga ut":
         st.subheader(f'{st.session_state["name"]}')
         st.session_state["authenticator"].logout('Logout', 'main')
 
