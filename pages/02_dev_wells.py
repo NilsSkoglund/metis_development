@@ -69,5 +69,5 @@ else:
     }
 
     total_score = dev_helpers.calc_score(dct_lungemboli, name_wells)
+    dev_helpers.lungemboli_display_txt(total_score)
     dev_helpers.lungemboli_display_button(total_score)
-    dev_helpers.lungemboli_display_lottie(total_score)
