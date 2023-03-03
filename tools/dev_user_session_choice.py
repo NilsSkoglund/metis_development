@@ -5,10 +5,7 @@ from streamlit_extras.switch_page_button import switch_page
 from tools import dev_init_session_state_vars
 
 dev_init_session_state_vars.init_session_state()
-# om användare har loggat in
-    # ny session
-    # fortsätt på senaste
-    # välj från lista
+
 
 def start_new_session():
 

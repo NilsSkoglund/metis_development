@@ -23,7 +23,7 @@ if st.session_state["authentication_status"] == False:
     st.radio("Välj meny"
              , options
              , key="options_inloggning_1"
-             , horizontal=True
+             , horizontal=False
              , label_visibility="hidden")
     
     if st.session_state["options_inloggning_1"] == "Registrera ny användare":
@@ -31,11 +31,11 @@ if st.session_state["authentication_status"] == False:
     if st.session_state["options_inloggning_1"] == "Glömt inloggningsuppgifter":
         st.write("---")
         options_credentials = ["Glömt lösenord", "Glömt användarnamn"]
-        st.radio("Välj meny"
+        st.radio("Glömt inloggningsuppgifter"
              , options_credentials
              , key="options_credentials_1"
              , horizontal=True
-             , label_visibility="collapsed")
+             , label_visibility="visible")
         if st.session_state["options_credentials_1"] == "Glömt lösenord":
             st.info("Ange ditt användarnamn så skickas ett lösenord\
                     till den kopplade emailen.")
@@ -53,7 +53,7 @@ if st.session_state["authentication_status"] == None:
     st.radio("Välj meny"
              , options
              , key="options_inloggning_2"
-             , horizontal=True
+             , horizontal=False
              , label_visibility="hidden")
     
     if st.session_state["options_inloggning_2"] == "Registrera ny användare":
@@ -61,11 +61,11 @@ if st.session_state["authentication_status"] == None:
     if st.session_state["options_inloggning_2"] == "Glömt inloggningsuppgifter":
         st.write("---")
         options_credentials = ["Glömt lösenord", "Glömt användarnamn"]
-        st.radio("Välj meny"
+        st.radio("Glömt inloggningsuppgifter"
              , options_credentials
              , key="options_credentials_2"
              , horizontal=True
-             , label_visibility="collapsed")
+             , label_visibility="visible")
         if st.session_state["options_credentials_2"] == "Glömt lösenord":
             st.info("Ange ditt användarnamn så skickas ett lösenord\
                     till den kopplade emailen.")

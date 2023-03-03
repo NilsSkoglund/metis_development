@@ -32,13 +32,13 @@ def custom_user_logged_in():
     st.session_state["deta"].Base(st.session_state["username"])
 
     options = ["Starta ny session"
-               , "Fortsätt på senaste"
-               , "Välj från lista"
-               , "Min sida"]
+               , "Fortsätt på senaste session"
+               , "Välj session från lista"
+               , "Logga ut"]
     st.radio("Välj meny"
              , options
              , key="session_choice"
-             , horizontal=True
+             , horizontal=False
              , label_visibility="collapsed")
     
     if st.session_state["session_choice"] == "Starta ny session":
