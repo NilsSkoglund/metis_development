@@ -58,6 +58,8 @@ else:
             , disabled=is_disabled
             )
         
+    st.write("---")
+    
     dct_lungemboli = {
     "Kliniska tecken på DVT": 3,
     "Tidigare LE/DVT diagnos": 1.5,

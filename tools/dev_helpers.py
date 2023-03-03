@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
 
 def calc_score(dct, name):
 	'''
@@ -35,7 +36,7 @@ def lungemboli_display_button(total_score):
     if total_score < 2:
         knapp_låg = st.button("Gå vidare till PERC")
         if knapp_låg:
-            switch_page("PERC")
+            switch_page("dev perc")
 
     elif total_score < 6.5:
         knapp_måttlig = st.button("Ange D-dimer svar")
