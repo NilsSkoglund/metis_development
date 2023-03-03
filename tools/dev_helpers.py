@@ -36,6 +36,7 @@ def lungemboli_display_button(total_score):
     if total_score < 2:
         knapp_låg = st.button("Gå vidare till PERC")
         if knapp_låg:
+            st.session_state["wells_radio_index"] = 1
             switch_page("dev perc")
 
     elif total_score < 6.5:

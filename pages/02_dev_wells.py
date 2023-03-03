@@ -30,8 +30,11 @@ elif st.session_state["authentication_status"] and\
     if st.session_state["choose_session_page2"]:
         switch_page("inloggning")
 else:
+    if "wells_radio" not in st.session_state:
+        st.session_state["wells_radio_index"] = 0
     st.radio(""
              , ["Pågående", "Avslutad"]
+             , index=st.session_state["wells_radio_index"]
              , key="wells_radio"
              , horizontal=True)
     
@@ -59,7 +62,7 @@ else:
             )
         
     st.write("---")
-    
+
     dct_lungemboli = {
     "Kliniska tecken på DVT": 3,
     "Tidigare LE/DVT diagnos": 1.5,
