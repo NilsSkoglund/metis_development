@@ -36,7 +36,8 @@ def custom_user_logged_in():
         st.write(f'**Email:** {info["email"]}')
 
         st.session_state["authenticator"].logout('Logout', 'main')
-        
+        time.sleep()
+
     st.write("---")
 
     # connect to database
