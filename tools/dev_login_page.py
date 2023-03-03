@@ -28,14 +28,11 @@ def custom_authenticate():
             st.session_state["authenticator"].login('Login', 'main')
 
 def custom_user_logged_in():
-    col1, col2 = st.columns([7,1])
-    with col1:
-        st.subheader(f'Användare: {st.session_state["name"]}')
-
-    with col2:
-        st.session_state["authenticator"].logout('LLogout', 'main')
-    st.write("---")
-
+    with st.expander("Användarprofil"):
+        st.subheader(f'Namn: {st.session_state["name"]}')
+        st.subheader(f'Användarnamn: {st.session_state["username"]}')
+        st.subheader(f'Mail: {st.session_state["mail"]}')
+        st.session_state["authenticator"].logout('Logout', 'main')
 
     # connect to database
     st.session_state["db"] =\
