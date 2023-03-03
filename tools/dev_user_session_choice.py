@@ -88,11 +88,23 @@ def continue_most_recent_session():
         # return key for most recent starttime
         most_recent_key = selected_items[0][0]
 
-        # set key for session
-        st.session_state["db_session_key"] = most_recent_key
+        st.write(st.session_state["db"]\
+                            .get(most_recent_key)\
+                            .get("name"))
 
-        # now move user to next page
-        switch_page("dev wells")
+        st.write("Starttid:", st.session_state["db"]\
+                            .get(most_recent_key)\
+                            .get("starttime"))
+
+        st.button("Gå vidare", key="continue_most_recent_session")
+
+        if st.session_state["continue_most_recent_session"]:
+
+            # set key for session
+            st.session_state["db_session_key"] = most_recent_key
+
+            # now move user to next page
+            switch_page("dev wells")
 
 
 def choose_session_from_list():

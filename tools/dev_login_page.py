@@ -38,7 +38,7 @@ def custom_user_logged_in():
              , options
              , key="session_choice"
              , horizontal=True
-             , label_visibility="hidden")
+             , label_visibility="collapsed")
     
     if st.session_state["session_choice"] == "Starta ny session":
         dev_user_session_choice.start_new_session()
