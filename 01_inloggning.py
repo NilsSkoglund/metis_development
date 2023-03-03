@@ -11,6 +11,7 @@ if st.session_state["authentication_status"]:
     # connect to database
     st.session_state["db"] =\
     st.session_state["deta"].Base(st.session_state["username"])
+    time.sleep(1)
     dev_login_page.custom_user_logged_in()
 
 # fel inloggningsuppgifter
