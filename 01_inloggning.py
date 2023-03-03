@@ -34,6 +34,7 @@ if st.session_state["authentication_status"] == False:
     if st.session_state["options_inloggning_1"] == "Registrera ny användare":
         dev_login_page.custom_register_user()
     if st.session_state["options_inloggning_1"] == "Glömt inloggningsuppgifter":
+        st.write("---")
         options_credentials = ["Glömt lösenord", "Glömt användarnamn"]
         st.radio("Välj meny"
              , options_credentials
@@ -76,6 +77,7 @@ if st.session_state["authentication_status"] == None:
     if st.session_state["options_inloggning_2"] == "Registrera ny användare":
         dev_login_page.custom_register_user()
     if st.session_state["options_inloggning_2"] == "Glömt inloggningsuppgifter":
+        st.write("---")
         options_credentials = ["Glömt lösenord", "Glömt användarnamn"]
         st.radio("Välj meny"
              , options_credentials
