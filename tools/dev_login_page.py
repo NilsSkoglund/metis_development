@@ -27,31 +27,40 @@ def custom_authenticate():
             st.session_state["authenticator"].login('Login', 'main')
 
 def custom_user_logged_in():
-    # backend
-        # connect to database
-    # database name based on username - new session state variable
+    # connect to database
     st.session_state["db"] =\
     st.session_state["deta"].Base(st.session_state["username"])
 
-    # frontend/backend
-        # start a new session
-        # continue on the most recent session
-        # choose session from list
+    options = ["Starta ny session"
+               , "Fortsätt på senaste"
+               , "Välj från lista"]
+    st.radio("Välj meny"
+             , options
+             , key="session_choice"
+             , horizontal=True
+             , label_visibility="hidden")
     
-    # new session state variable
-    st.checkbox("Starta ny session", key="start_new_session") 
-    if st.session_state["start_new_session"]:
+    if st.session_state["session_choice"] == "Starta ny session":
         dev_user_session_choice.start_new_session()
-
-    # new session state variable
-    st.checkbox("Fortsätt på senaste", key="continue_most_recent_session") 
-    if st.session_state["continue_most_recent_session"]:
+    if st.session_state["session_choice"] == "Fortsätt på senaste":
         dev_user_session_choice.continue_most_recent_session()
-
-    # new session state variable
-    st.checkbox("Välj från lista", key="choose_session_from_list") 
-    if st.session_state["choose_session_from_list"]:
+    if st.session_state["session_choice"] == "Välj från lista":
         dev_user_session_choice.choose_session_from_list()
+    
+
+    # st.checkbox("Starta ny session", key="start_new_session") 
+    # if st.session_state["start_new_session"]:
+    #     dev_user_session_choice.start_new_session()
+
+    # # new session state variable
+    # st.checkbox("Fortsätt på senaste", key="continue_most_recent_session") 
+    # if st.session_state["continue_most_recent_session"]:
+    #     dev_user_session_choice.continue_most_recent_session()
+
+    # # new session state variable
+    # st.checkbox("Välj från lista", key="choose_session_from_list") 
+    # if st.session_state["choose_session_from_list"]:
+    #     dev_user_session_choice.choose_session_from_list()
 
 def custom_register_user():
     try:
