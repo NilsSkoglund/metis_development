@@ -43,7 +43,7 @@ def login_button(authorization_url, app_name, app_desc):
     # '''
     # st.markdown(container, unsafe_allow_html=True)
 
-    container = f'''<a target='_self' href='{authorization_url}'Logga in med Google</a>'''
+    container = f"<a target='_self' href='{authorization_url}'Logga in med Google</a>"
     st.markdown(container, unsafe_allow_html=True)
 
     st.write(f"[link]({authorization_url})")
