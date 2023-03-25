@@ -49,6 +49,10 @@ def login_button(authorization_url, app_name, app_desc):
     }
     </style>
     '''
+
+    style = "<style>h2 {text-align: center;}</style>"
+    st.markdown(style, unsafe_allow_html=True)
+    st.subheader(f"[Foo]({authorization_url})")
     
     st.markdown(title_alignment, unsafe_allow_html=True)
 
