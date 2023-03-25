@@ -22,7 +22,7 @@ if st.session_state["authentication_status"] == None and "random_cookie_name" no
 
     client_id = "1047167822945-ohs32k407e6ej3v4ont64rsd3tc6sktf.apps.googleusercontent.com"
     client_secret = "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"
-    uri = 'https://metis-dev.streamlit.app/'
+    uri = "https://metis-dev.streamlit.app/siginin-google"
     login_info = google_oauth.login(
             client_id=client_id,
             client_secret=client_secret,
