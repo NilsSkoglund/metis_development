@@ -20,8 +20,8 @@ dev_init_session_state_vars.init_session_state()
 
 if st.session_state["authentication_status"] == None and "random_cookie_name" not in cm.get_all():
 
-    client_id = "836432242434-a1mg70bs9s2g83llpvd6jmidstkgovtt.apps.googleusercontent.com"
-    client_secret = "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"
+    client_id = "1047167822945-ohs32k407e6ej3v4ont64rsd3tc6sktf.apps.googleusercontent.com"
+    client_secret = "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"
     uri = 'https://metis-dev.streamlit.app'
 
     login_info = google_oauth.login(
