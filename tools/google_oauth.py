@@ -48,8 +48,8 @@ def login_button(authorization_url, app_name, app_desc):
     st.markdown(link_color, unsafe_allow_html=True)
     style = "<style>h3 {text-align: center; color: white;}</style>"
     st.markdown(style, unsafe_allow_html=True)
-    
-    st.subheader(f"[Foo]({authorization_url})")
+
+    st.subheader(f"[:white[Foo]]({authorization_url})")
     
 
 
