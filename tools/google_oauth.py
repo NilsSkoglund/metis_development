@@ -36,7 +36,7 @@ def login_button(authorization_url, app_name, app_desc):
     google_img = "https://www.google.se/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png"
     container = f'''
     <div class="col-md-12 text-center">
-        <a target="_self" href="{authorization_url}+&output=embed">
+        <a target="_self" href="{authorization_url}">
             <button type="button" class="btn-lg btn-primary">
             Logga in med Google</button>
         </a>
