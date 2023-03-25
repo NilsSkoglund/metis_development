@@ -45,7 +45,7 @@ def login_button(authorization_url, app_name, app_desc):
 
     st.write(f"[link]({authorization_url})")
 
-    st.markdown("[![Foo](http://www.google.com.au/images/nav_logo7.png)](http://google.com.au/)")
+    st.markdown(f"[![Foo](http://www.google.com.au/images/nav_logo7.png)]({authorization_url})")
 
 def logout_button(button_text):
     if st.button(button_text):
