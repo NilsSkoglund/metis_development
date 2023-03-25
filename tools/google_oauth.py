@@ -46,6 +46,14 @@ def login_button(authorization_url, app_name, app_desc):
     unsafe_allow_html=True)
     st.write(f"[link]({authorization_url})")
 
+    import webbrowser
+
+
+    def open_support_ticket():
+        webbrowser.open(authorization_url)
+
+    st.button("Contact us!", on_click=open_support_ticket)
+
 def logout_button(button_text):
     if st.button(button_text):
         st.session_state["authentication_status"] = None
