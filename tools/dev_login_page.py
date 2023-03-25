@@ -6,6 +6,26 @@ from tools import dev_database_interactions
 import yagmail
 import time
 
+def custom_authenticate_oauth():
+    with open("dunno.yaml") as file:
+        config = yaml.load(file, Loader=yaml.SafeLoader)
+
+    credentials = dev_database_interactions.get_config_cred()
+    # new session state variable
+    st.session_state["authenticator"] = stauth.Authenticate( 
+        credentials,
+        config['cookie']['name'],
+        config['cookie']['key'],
+        config['cookie']['expiry_days'],
+        config['preauthorized']
+    )
+
+    # new session state variables
+    st.session_state["name"] = st.session_state["user_email"]
+    st.session_state["username"] = st.session_state["user_email"]
+    st.session_state["authentication_status"] = True
+
+    st.session_state["google"] = True
 
 def custom_authenticate():
     with open("dunno.yaml") as file:

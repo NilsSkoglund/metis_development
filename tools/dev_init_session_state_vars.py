@@ -2,6 +2,8 @@ import streamlit as st
 from deta import Deta
 
 def init_session_state():
+    if "authentication_status" not in st.session_state:
+        st.session_state["authentication_status"] = None
     # Connect to Deta Base with your Project Key
     if "deta" not in st.session_state:
         st.session_state["deta"] = Deta(st.secrets["deta_key"])

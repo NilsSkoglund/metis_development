@@ -3,6 +3,8 @@ import streamlit as st
 import time
 from tools import dev_login_page
 from tools import dev_init_session_state_vars
+from tools import google_oauth
+import extra_streamlit_components as stx
 st.markdown("""
     <style>
     [role=radiogroup]{
@@ -11,7 +13,27 @@ st.markdown("""
     </style>
     """,unsafe_allow_html=True)
 
+cm = stx.CookieManager(key="init2")
+
 dev_init_session_state_vars.init_session_state()
+
+
+if st.session_state["authentication_status"] == None and "random_cookie_name" not in cm.get_all():
+
+    client_id = "836432242434-a1mg70bs9s2g83llpvd6jmidstkgovtt.apps.googleusercontent.com"
+    client_secret = "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"
+    uri = 'https://metis-dev.streamlit.app'
+
+    login_info = google_oauth.login(
+            client_id=client_id,
+            client_secret=client_secret,
+            redirect_uri=uri,
+            logout_button_text="Logga ut"
+        )
+
+    if login_info:
+        dev_login_page.custom_authenticate_oauth()
+
 dev_login_page.custom_authenticate()
 
 if st.session_state["authentication_status"]:
@@ -19,6 +41,10 @@ if st.session_state["authentication_status"]:
     st.session_state["db"] =\
     st.session_state["deta"].Base(st.session_state["username"])
     time.sleep(1)
+    if "google" not in st.session_state:
+        st.session_state["authenticator"].logout('Logout', 'main')
+    else:
+        google_oauth.logout_button("Logga ut")
     dev_login_page.custom_user_logged_in()
 
 # fel inloggningsuppgifter
