@@ -42,9 +42,7 @@ def login_button(authorization_url, app_name, app_desc):
     # </div>
     # '''
     # st.markdown(container, unsafe_allow_html=True)
-    st.write(f'''<h1>
-    Please login via <a target="_self"
-    href="{authorization_url}">Google</a></h1>''',
+    st.write(f'''<h1> <a target="_self" href="{authorization_url}">Google</a> </h1>''',
     unsafe_allow_html=True)
     st.write(f"[link]({authorization_url})")
 
