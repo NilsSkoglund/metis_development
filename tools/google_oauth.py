@@ -49,10 +49,9 @@ def login_button(authorization_url, app_name, app_desc):
     import webbrowser
 
 
-    def open_support_ticket():
+    login = st.button("login")
+    if login:
         webbrowser.open(authorization_url)
-
-    st.button("Contact us!", on_click=open_support_ticket)
 
 def logout_button(button_text):
     if st.button(button_text):
