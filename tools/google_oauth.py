@@ -42,19 +42,16 @@ def login_button(authorization_url, app_name, app_desc):
     # </div>
     # '''
     # st.markdown(container, unsafe_allow_html=True)
-    title_alignment = '''
-    <style>
-    .img {
-    text-align: center
-    }
-    </style>
+    link_color = '''
+    <style>a {color: hotpink;}</style>
     '''
-
+    st.markdown(link_color, unsafe_allow_html=True)
     style = "<style>h3 {text-align: center; color: white;}</style>"
     st.markdown(style, unsafe_allow_html=True)
+    
     st.subheader(f"[Foo]({authorization_url})")
     
-    st.markdown(title_alignment, unsafe_allow_html=True)
+
 
     st.write(f"[link]({authorization_url})")
 
