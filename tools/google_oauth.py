@@ -30,14 +30,23 @@ async def revoke_token(client, token):
 # </svg>
 
 def login_button(authorization_url, app_name, app_desc):
-    st.markdown('''<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="sameorigin">''',
-    unsafe_allow_html=True)
+    # st.markdown('''<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    # integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="sameorigin">''',
+    # unsafe_allow_html=True)
+    # container = f'''
+    # <div class="col-md-12 text-center">
+    #     <a target="_self" href="{authorization_url}">
+    #         <button type="button" class="btn-lg btn-primary">
+    #         Logga in med Google</button>
+    #     </a>
+    # </div>
+    # '''
+    # st.markdown(container, unsafe_allow_html=True)
+
     container = f'''
-    <div class="col-md-12 text-center">
-        <a target="_self" href="{authorization_url}">
-            <button type="button" class="btn-lg btn-primary">
-            Logga in med Google</button>
+    <div class="text-center">
+        <a target="_self" href="{authorization_url}"
+            Logga in med Google
         </a>
     </div>
     '''
