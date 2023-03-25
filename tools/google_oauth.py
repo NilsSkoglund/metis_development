@@ -42,14 +42,11 @@ def login_button(authorization_url, app_name, app_desc):
     # </div>
     # '''
     # st.markdown(container, unsafe_allow_html=True)
-    st.write(f'''<h1> <a target="_self" href="{authorization_url}">Google</a> </h1>''',
-    unsafe_allow_html=True)
+
     st.write(f"[link]({authorization_url})")
 
-    st.markdown(f'''
-    <a href={authorization_url}><button style="background-color:GreenYellow;">Stackoverflow</button></a>
-    ''',
-    unsafe_allow_html=True)
+    st.markdown(f'''<a href={authorization_url}> <button style="background-color:GreenYellow;">Stackoverflow</button></a>''',
+        unsafe_allow_html=True)
 
 def logout_button(button_text):
     if st.button(button_text):
