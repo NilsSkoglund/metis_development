@@ -5,6 +5,19 @@ from tools import dev_login_page
 from tools import dev_init_session_state_vars
 from tools import google_oauth
 import extra_streamlit_components as stx
+from streamlit_lottie import st_lottie
+import requests
+
+
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+lottie_url = "https://assets7.lottiefiles.com/packages/lf20_inp8ddzw.json"
+lottie_json = load_lottieurl(lottie_url)
+st_lottie(lottie_json, height=20, width=148.45)
 
 
 
