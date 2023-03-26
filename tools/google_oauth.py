@@ -33,7 +33,7 @@ def login_button(authorization_url, app_name, app_desc):
     unsafe_allow_html=True)
     container = f'''
     <div class="col-md-12 text-center">
-        <p style='text-align: center; font-size: 32px; font-weight: bold;'>Diagnostiseringsverktyg för lungemboli</p>
+        <p style='text-align: center; font-size: 32px; font-weight: 500;'>Diagnostiseringsverktyg för lungemboli</p>
         <br>
         <a target="_target" href="{authorization_url}">
             <button type="button" class="btn-lg btn-primary">
