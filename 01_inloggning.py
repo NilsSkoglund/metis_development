@@ -19,13 +19,6 @@ import extra_streamlit_components as stx
 #centered
 cm = stx.CookieManager(key="init2")
 
-st.markdown(
-    """<p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>
-    """,
-    unsafe_allow_html=True,
-)
-
-
 dev_init_session_state_vars.init_session_state()
 
 
