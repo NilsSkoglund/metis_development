@@ -57,7 +57,7 @@ with st.expander("Visa övriga alternativ"):
     if st.session_state["authentication_status"] == False:
         st.error('Username/password is incorrect')
 
-        options = ["Logga in"
+        options = ["Logga in med registrerad användare"
                 , "Registrera ny användare"
                 , "Glömt inloggningsuppgifter"]
         st.radio("Välj meny"
@@ -88,7 +88,7 @@ with st.expander("Visa övriga alternativ"):
 
     # ej angett inloggningsuppgifter
     if st.session_state["authentication_status"] == None:
-        options = ["Logga in", "Registrera ny användare",
+        options = ["Logga in med registrerad användare", "Registrera ny användare",
                 "Glömt inloggningsuppgifter"]
         st.radio("Välj meny"
                 , options
