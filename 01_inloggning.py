@@ -8,10 +8,22 @@ import extra_streamlit_components as stx
 from streamlit_lottie import st_lottie
 import requests
 from PIL import Image
+import base64
 
-image = Image.open('logo.svg')
+def render_svg(svg_file):
 
-st.image(image)
+    with open(svg_file, "r") as f:
+        lines = f.readlines()
+        svg = "".join(lines)
+
+        """Renders the given svg string."""
+        b64 = base64.b64encode(svg.encode("utf-8")).decode("utf-8")
+        html = r'<img src="data:image/svg+xml;base64,%s"/>' % b64
+        return html
+
+render_svg('logo.svg')
+
+#st.image(image)
 
 cm = stx.CookieManager(key="init2")
 
