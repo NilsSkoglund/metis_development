@@ -33,7 +33,8 @@ def login_button(authorization_url, app_name, app_desc):
     unsafe_allow_html=True)
     container = f'''
     <div class="col-md-12 text-center">
-        <p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>'
+        <p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>
+        <br>
         <a target="_target" href="{authorization_url}">
             <button type="button" class="btn-lg btn-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
