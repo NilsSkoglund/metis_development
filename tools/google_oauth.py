@@ -51,8 +51,22 @@ def login_button(authorization_url, app_name, app_desc):
     # st.markdown(style, unsafe_allow_html=True)
 
     # st.subheader(f"[:white[Foo]]({authorization_url})")
-
-        #centered
+    button_style = '''
+    <style> 
+        .button {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 2px;
+    }
+    </style>'''
+    st.markdown(button_style, unsafe_allow_html=True)
     st.markdown(
         f"""<a style='display: block; text-align: center;' href={authorization_url}>
         <img src="https://downloadr2.apkmirror.com/wp-content/uploads/2016/05/5735811c4301f.png" width="60" height="60"><p style="color:white;font-size:24px;">Logga in med Google</p>
