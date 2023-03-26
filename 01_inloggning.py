@@ -33,20 +33,7 @@ if st.session_state["authentication_status"] == None and "random_cookie_name" no
     if login_info:
         dev_login_page.custom_authenticate_oauth()
 
-
-if st.session_state["authentication_status"] == None:
-    options = ["Logga in med Google", 
-               "Logga in på registrerad användare", 
-               "Registrera ny användare",
-               "Glömt inloggningsuppgifter"]
-    st.radio("Välj meny"
-             , options
-             , key="options_inloggning_2"
-             , horizontal=False
-             , label_visibility="hidden")
-    
-if st.session_state["options_inloggning_2"] == "Logga in på registrerad användare":
-    dev_login_page.custom_authenticate()
+dev_login_page.custom_authenticate()
 
 if st.session_state["authentication_status"]:
     # connect to database
@@ -92,7 +79,15 @@ if st.session_state["authentication_status"] == False:
         
     
 
-
+# ej angett inloggningsuppgifter
+if st.session_state["authentication_status"] == None:
+    options = ["Logga in", "Registrera ny användare",
+               "Glömt inloggningsuppgifter"]
+    st.radio("Välj meny"
+             , options
+             , key="options_inloggning_2"
+             , horizontal=False
+             , label_visibility="hidden")
     
     if st.session_state["options_inloggning_2"] == "Registrera ny användare":
         dev_login_page.custom_register_user()
