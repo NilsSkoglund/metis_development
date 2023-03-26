@@ -26,6 +26,18 @@ cm = stx.CookieManager(key="init2")
 
 dev_init_session_state_vars.init_session_state()
 
+st.markdown("""
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+    h1 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+st.markdown("# This is a header using the Roboto Thin font")
+
 def load_lottieurl(url: str):
     r = requests.get(url)
     if r.status_code != 200:
