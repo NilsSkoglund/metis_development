@@ -53,7 +53,7 @@ def login_button(authorization_url, app_name, app_desc):
 
         #centered
     st.markdown(
-        """<a style='display: block; text-align: center;' href="https://www.example.com/">
+        f"""<a style='display: block; text-align: center;' href={authorization_url}>
         <h3>hejho</h3>
         </a>
         """,
