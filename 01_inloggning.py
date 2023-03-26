@@ -22,7 +22,7 @@ lottie_json = load_lottieurl(lottie_url)
 with st.sidebar:
     st_lottie(lottie_json)
 
-st.markdown('''<p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>''', unsafe_allow_html=True)
+# st.markdown('''<p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>''', unsafe_allow_html=True)
 
 if st.session_state["authentication_status"] == None and "random_cookie_name" not in cm.get_all():
 
