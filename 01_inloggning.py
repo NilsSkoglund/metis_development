@@ -36,7 +36,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown("# This is a header using the Roboto Thin font")
 
 def load_lottieurl(url: str):
     r = requests.get(url)
