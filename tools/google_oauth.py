@@ -25,45 +25,7 @@ async def get_user_info(client, token):
 async def revoke_token(client, token):
     return await client.revoke_token(token)
 
-# <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
-# <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
-# </svg>
-
 def login_button(authorization_url, app_name, app_desc):
-    js_code = '''
-    function openOAuthPopup(url, width, height) {
-        const left = (window.screen.width / 2) - (width / 2);
-        const top = (window.screen.height / 2) - (height / 2);
-        const oauthPopup = window.open(url, '_blank', `toolbar=no, location=yes, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`);
-        
-        const checkPopupStatus = () => {
-            if (!oauthPopup || oauthPopup.closed) {
-                location.reload();
-            } else {
-                setTimeout(checkPopupStatus, 100);
-            }
-        };
-        
-        checkPopupStatus();
-    }
-    '''
-
-    container = f'''
-    <div class="col-md-12 text-center">
-        <button type="button" class="btn-lg btn-primary" onclick="openOAuthPopup('{authorization_url}', 800, 600);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
-            <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
-            </svg>
-            Logga in med Google
-        </button>
-    </div>
-    '''
-
-    st.markdown(f"<script>{js_code}</script>", unsafe_allow_html=True)
-    st.markdown(container, unsafe_allow_html=True)
-
-
-def login_button_temp(authorization_url, app_name, app_desc):
     st.markdown('''<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="sameorigin">''',
     unsafe_allow_html=True)
@@ -80,25 +42,16 @@ def login_button_temp(authorization_url, app_name, app_desc):
     '''
     st.markdown(container, unsafe_allow_html=True)
 
-    # img1 = "https://downloadr2.apkmirror.com/wp-content/uploads/2016/05/5735811c4301f.png"
-    
-    # st.markdown(
-    #     f"""<a target="_self" style='display: block; text-align: center;' href={authorization_url}>
-    #     <img src={img1} width="75" height="75"><button style='bottom: 0; border: 2px #4285F4; border-radius: 5px; background-color: white; color: #4285F4; font-size:18px; font-weight: 600; font-family:sans-serif; padding: 8px 8px;' type="button">Logga in med Google</button>
-    #     </a>
-    #     """,
-    #     unsafe_allow_html=True,
-    # )
 
 def logout_button(button_text):
     if st.button(button_text):
         st.session_state["authentication_status"] = None
-        # asyncio.run(
-        #     revoke_token(
-        #         client=st.session_state.client,
-        #         token=st.session_state.token["access_token"],
-        #     )
-        # )
+        asyncio.run(
+            revoke_token(
+                client=st.session_state.client,
+                token=st.session_state.token["access_token"],
+            )
+        )
         st.session_state.user_email = None
         st.session_state.user_id = None
         st.session_state.token = None
