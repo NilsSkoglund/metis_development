@@ -64,9 +64,9 @@ if st.session_state["authentication_status"] == None and "random_cookie_name" no
     if login_info:
         dev_login_page.custom_authenticate_oauth()
 
-st.write("")
-st.write("")
-st.write("")
+# st.write("")
+# st.write("")
+# st.write("")
 
 
 if st.session_state["authentication_status"]:
