@@ -56,6 +56,7 @@ def login_button(authorization_url, app_name, app_desc):
     st.markdown(
         f"""<a style='display: block; text-align: center;' href={authorization_url}>
         <h3>hejho</h3>
+        <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
         </a>
         """,
         unsafe_allow_html=True,
