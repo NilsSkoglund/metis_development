@@ -36,14 +36,13 @@ def custom_authenticate():
             st.session_state["authenticator"].login('Login', 'main')
 
 def custom_user_logged_in():
-    with st.sidebar():
-        with st.expander("Logga ut"):
-            username = st.session_state["username"]
-            st.write(f'**Inloggad användare:** {username}')
-            if "google" not in st.session_state:
-                st.session_state["authenticator"].logout('Logout', 'main')
-            else:
-                google_oauth.logout_button("Logga ut")
+    with st.sidebar:
+        username = st.session_state["username"]
+        st.write(f'**Inloggad användare:** {username}')
+        if "google" not in st.session_state:
+            st.session_state["authenticator"].logout('Logout', 'main')
+        else:
+            google_oauth.logout_button("Logga ut")
 
         # info = st.session_state["deta"].Base("users_db").get(username)
         # st.write(f'**Namn:** {info["name"]}')
