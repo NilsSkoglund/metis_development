@@ -32,8 +32,7 @@ def login_button(authorization_url, app_name, app_desc):
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="sameorigin">''',
     unsafe_allow_html=True)
     container = f'''
-    <div class="col-md-12 text-center">
-        <p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>
+    <div class="col-md-12 text-center">        
         <br>
         <a target="_target" href="{authorization_url}">
             <button type="button" class="btn-lg btn-primary">
