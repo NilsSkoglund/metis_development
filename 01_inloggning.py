@@ -4,6 +4,8 @@ import time
 from tools import dev_login_page
 from tools import dev_init_session_state_vars
 from tools import google_oauth
+import extra_streamlit_components as stx
+
 
 st.markdown("""
     <style>
