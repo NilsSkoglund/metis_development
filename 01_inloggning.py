@@ -5,6 +5,10 @@ from tools import dev_login_page
 from tools import dev_init_session_state_vars
 from tools import google_oauth
 import extra_streamlit_components as stx
+
+from mycomponent import mycomponent
+value = mycomponent(my_input_value="hello there")
+st.write("Received", value)
 st.markdown("""
     <style>
     [role=radiogroup]{
