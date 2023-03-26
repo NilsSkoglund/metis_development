@@ -108,10 +108,10 @@ def login(
                             client=st.session_state.client, token=token["access_token"]
                         )
                     )
-                    logout_button(button_text=logout_button_text)
+                    #logout_button(button_text=logout_button_text)
                     return (st.session_state.user_id, st.session_state.user_email)
     else:
-        logout_button(button_text=logout_button_text)
+        #logout_button(button_text=logout_button_text)
         return (st.session_state.user_id, st.session_state.user_email)
     
 
