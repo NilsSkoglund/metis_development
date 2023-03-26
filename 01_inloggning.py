@@ -87,6 +87,15 @@ if st.session_state["authentication_status"]:
 if st.session_state["authentication_status"] != True:
     co1, col2, col3 = st.columns([1,6,1])
     with col2:
+        font_css ='''
+                    <style>
+                        .streamlit-expanderHeader {
+                           font-size:30px;
+                           text-align:center;
+                    }
+                    </style>
+                '''
+        st.markdown(font_css,unsafe_allow_html = True)
 
         with st.expander("Visa övriga alternativ"):
 
