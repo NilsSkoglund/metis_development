@@ -52,7 +52,7 @@ if st.session_state["authentication_status"]:
 
     dev_login_page.custom_user_logged_in()
 
-co1, col2, col3 = st.columns([1,3,1])
+co1, col2, col3 = st.columns([1,4,1])
 
 with col2:
 
