@@ -15,6 +15,10 @@ def load_lottieurl(url: str):
         return None
     return r.json()
 
+cm = stx.CookieManager(key="init2")
+
+dev_init_session_state_vars.init_session_state()
+
 lottie_url = "https://assets5.lottiefiles.com/packages/lf20_bYskKBq3WY.json"
 lottie_json = load_lottieurl(lottie_url)
 st_lottie(lottie_json, height=200, width=200)
@@ -28,9 +32,7 @@ st_lottie(lottie_json, height=200, width=200)
 #     """,unsafe_allow_html=True)
 
 #centered
-cm = stx.CookieManager(key="init2")
 
-dev_init_session_state_vars.init_session_state()
 
 
 if st.session_state["authentication_status"] == None and "random_cookie_name" not in cm.get_all():
