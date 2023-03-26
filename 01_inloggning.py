@@ -27,7 +27,7 @@ def img_to_html(img_path):
     return img_html
 
 if st.session_state["authentication_status"] != True:
-    st.markdown("<p style='text-align: center; color: grey;'>"+img_to_html('logo10_sv.png')+"</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; color: grey;'>"+img_to_html('logo11_sv.png')+"</p>", unsafe_allow_html=True)
 
 
 
