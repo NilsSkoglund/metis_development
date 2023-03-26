@@ -8,17 +8,17 @@ import extra_streamlit_components as stx
 
 
 
-st.markdown("""
-    <style>
-    [role=radiogroup]{
-        gap: 0.5rem;
-    }
-    </style>
-    """,unsafe_allow_html=True)
+# st.markdown("""
+#     <style>
+#     [role=radiogroup]{
+#         gap: 0.5rem;
+#     }
+#     </style>
+#     """,unsafe_allow_html=True)
 
 #centered
 st.markdown(
-    """<p style='display: block; text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>
+    """<p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>
     """,
     unsafe_allow_html=True,
 )
