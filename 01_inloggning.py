@@ -20,7 +20,7 @@ import extra_streamlit_components as stx
 cm = stx.CookieManager(key="init2")
 
 st.markdown(
-    """<h3 style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</h3>
+    """<p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>
     """,
     unsafe_allow_html=True,
 )
@@ -45,8 +45,6 @@ if st.session_state["authentication_status"] == None and "random_cookie_name" no
         dev_login_page.custom_authenticate_oauth()
 
 st.write("")
-st.write("")
-st.write("---")
 st.write("")
 st.write("")
 
