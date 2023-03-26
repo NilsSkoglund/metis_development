@@ -55,18 +55,12 @@ def login_button(authorization_url, app_name, app_desc):
         #centered
     st.markdown(
         f"""<a style='display: block; text-align: center;' href={authorization_url}>
-        <h3>hejho</h3>
-        <img src="https://www.google.se/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png" width="100" height="60">
+        <h3>Logga in med Google</h3>
+        <img src="https://downloadr2.apkmirror.com/wp-content/uploads/2016/05/5735811c4301f.png" width="60" height="60">
         </a>
         """,
         unsafe_allow_html=True,
-)
-    
-
-
-    st.write(f"[link]({authorization_url})")
-
-    st.markdown(f"[![Foo](http://www.google.com.au/images/nav_logo7.png)]({authorization_url})")
+    )
 
 def logout_button(button_text):
     if st.button(button_text):
