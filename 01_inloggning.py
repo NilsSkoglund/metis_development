@@ -24,7 +24,7 @@ def img_to_html(img_path):
     return img_html
 
 
-st.markdown("<p style='text-align: center; color: grey;'>"+img_to_html('logo8_sv.png')+"</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: grey;'>"+img_to_html('logo9c_sv.png')+"</p>", unsafe_allow_html=True)
 
 dev_init_session_state_vars.init_session_state()
 
