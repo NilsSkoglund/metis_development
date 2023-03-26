@@ -12,6 +12,9 @@ import base64
 from pathlib import Path
 
 cm = stx.CookieManager(key="init2")
+dev_init_session_state_vars.init_session_state()
+
+
 
 def img_to_bytes(img_path):
     img_bytes = Path(img_path).read_bytes()
@@ -23,10 +26,10 @@ def img_to_html(img_path):
     )
     return img_html
 
+if st.session_state["authentication_status"] != True:
+    st.markdown("<p style='text-align: center; color: grey;'>"+img_to_html('logo10_sv.png')+"</p>", unsafe_allow_html=True)
 
-st.markdown("<p style='text-align: center; color: grey;'>"+img_to_html('logo10_sv.png')+"</p>", unsafe_allow_html=True)
 
-dev_init_session_state_vars.init_session_state()
 
 st.markdown("""
     <style>
