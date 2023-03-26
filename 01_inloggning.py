@@ -6,6 +6,12 @@ from tools import dev_init_session_state_vars
 from tools import google_oauth
 import extra_streamlit_components as stx
 
+#centered
+st.markdown(
+    """<p style='display: block; text-align: center; font-size: 18px;'>Metis hjälpverktyg för lungemboli</p>
+    """,
+    unsafe_allow_html=True,
+)
 
 st.markdown("""
     <style>
