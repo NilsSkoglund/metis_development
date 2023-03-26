@@ -20,12 +20,7 @@ def img_to_html(img_path):
       img_to_bytes(img_path)
     )
     return img_html
-
 st.markdown("<p style='text-align: center; color: grey;'>"+img_to_html('logo2.png')+"</p>", unsafe_allow_html=True)
-
-image = Image.open('logo2.png')
-
-st.image(image)
 
 cm = stx.CookieManager(key="init2")
 
