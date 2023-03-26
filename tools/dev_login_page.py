@@ -37,13 +37,14 @@ def custom_authenticate():
 def custom_user_logged_in():
     with st.expander("Användarprofil"):
         username = st.session_state["username"]
-        info = st.session_state["deta"].Base("users_db").get(username)
-        st.write(f'**Namn:** {info["name"]}')
         st.write(f'**Användarnamn:** {username}')
-        st.write(f'**Email:** {info["email"]}')
 
-        st.session_state["authenticator"].logout('Logout', 'main')
-        time.sleep(1)
+        # info = st.session_state["deta"].Base("users_db").get(username)
+        # st.write(f'**Namn:** {info["name"]}')
+        # st.write(f'**Email:** {info["email"]}')
+
+        # st.session_state["authenticator"].logout('Logout', 'main')
+        # time.sleep(1)
 
     st.write("---")
 

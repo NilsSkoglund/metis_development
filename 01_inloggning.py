@@ -46,6 +46,7 @@ if st.session_state["authentication_status"]:
         st.session_state["authenticator"].logout('Logout', 'main')
     else:
         google_oauth.logout_button("Logga ut")
+        
     dev_login_page.custom_user_logged_in()
 
 # fel inloggningsuppgifter
