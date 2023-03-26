@@ -9,6 +9,8 @@ import extra_streamlit_components as stx
 from mycomponent import mycomponent
 value = mycomponent(my_input_value="hello there")
 st.write("Received", value)
+
+
 st.markdown("""
     <style>
     [role=radiogroup]{

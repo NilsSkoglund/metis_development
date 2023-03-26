@@ -1,7 +1,13 @@
 <html>
   <body>
     <!-- Set up your HTML here -->
-    <input id="myinput" value="testitest" />
+    <button
+      id="loginButton"
+      type="button"
+      onclick="openPopup(window.location.hash.substr(1));"
+    >
+      Logga in med Google
+    </button>
 
     <script>
       // ----------------------------------------------------
