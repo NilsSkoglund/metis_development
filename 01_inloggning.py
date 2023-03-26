@@ -19,7 +19,8 @@ def load_lottieurl(url: str):
     return r.json()
 lottie_url = "https://assets5.lottiefiles.com/packages/lf20_bYskKBq3WY.json"
 lottie_json = load_lottieurl(lottie_url)
-st_lottie(lottie_json, height=200, width=200)
+with st.sidebar:
+    st_lottie(lottie_json, height=150, width=150)
 
 st.markdown('''<p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>''', unsafe_allow_html=True)
 
