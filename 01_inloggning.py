@@ -18,7 +18,7 @@ import extra_streamlit_components as stx
 
 #centered
 st.markdown(
-    """<p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>
+    """<h3 style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</h3>
     """,
     unsafe_allow_html=True,
 )
