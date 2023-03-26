@@ -11,6 +11,8 @@ from PIL import Image
 import base64
 from pathlib import Path
 
+cm = stx.CookieManager(key="init2")
+
 def img_to_bytes(img_path):
     img_bytes = Path(img_path).read_bytes()
     encoded = base64.b64encode(img_bytes).decode()
@@ -21,18 +23,8 @@ def img_to_html(img_path):
     )
     return img_html
 
-st.markdown("""
-    <style>
-    .img-fluid {
-    max-width: 50%;
-    height: auto;
-    }
-    </style>
-""", unsafe_allow_html=True)
 
 st.markdown("<p style='text-align: center; color: grey;'>"+img_to_html('logo7_sv.png')+"</p>", unsafe_allow_html=True)
-
-cm = stx.CookieManager(key="init2")
 
 dev_init_session_state_vars.init_session_state()
 
