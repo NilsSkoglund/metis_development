@@ -19,8 +19,6 @@ lottie_url = "https://assets5.lottiefiles.com/packages/lf20_0fhlytwe.json"
 lottie_json = load_lottieurl(lottie_url)
 st_lottie(lottie_json, height=200, width=200)
 
-
-
 # st.markdown("""
 #     <style>
 #     [role=radiogroup]{

@@ -26,22 +26,11 @@ async def revoke_token(client, token):
     return await client.revoke_token(token)
 
 
-from streamlit_lottie import st_lottie
-import requests
-def load_lottieurl(url: str):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
-
 
 def login_button(authorization_url, app_name, app_desc):
     st.markdown('''<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="sameorigin">''',
     unsafe_allow_html=True)
-    lottie_url = "https://assets5.lottiefiles.com/packages/lf20_0fhlytwe.json"
-    lottie_json = load_lottieurl(lottie_url)
-    st_lottie(lottie_json, height=200, width=200)
     container = f'''
     <div class="col-md-12 text-center">
         <p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>
