@@ -73,7 +73,7 @@ def login_button(authorization_url, app_name, app_desc):
     
     st.markdown(
         f"""<a style='display: block; text-align: center;' href={authorization_url}>
-        <img src={img1} width="60" height="60"><button style='bottom: 0; border: 2px #4285F4; border-radius: 5px; background-color: white; color: #4285F4; font-size:18px; font-weight: 600; font-family:sans-serif; padding: 8px 8px;' type="button">Logga in med Google</button>
+        <img src={img1} width="75" height="75"><button style='bottom: 0; border: 2px #4285F4; border-radius: 5px; background-color: white; color: #4285F4; font-size:18px; font-weight: 600; font-family:sans-serif; padding: 8px 8px;' type="button">Logga in med Google</button>
         </a>
         """,
         unsafe_allow_html=True,
