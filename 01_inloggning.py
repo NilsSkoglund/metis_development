@@ -21,18 +21,6 @@ lottie_url = "https://assets5.lottiefiles.com/packages/lf20_bYskKBq3WY.json"
 lottie_json = load_lottieurl(lottie_url)
 st_lottie(lottie_json, height=200, width=200)
 
-# st.markdown("""
-#     <style>
-#     [role=radiogroup]{
-#         gap: 0.5rem;
-#     }
-#     </style>
-#     """,unsafe_allow_html=True)
-
-#centered
-
-
-
 if st.session_state["authentication_status"] == None and "random_cookie_name" not in cm.get_all():
 
     client_id = "1047167822945-ohs32k407e6ej3v4ont64rsd3tc6sktf.apps.googleusercontent.com"
