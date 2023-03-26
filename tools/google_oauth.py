@@ -56,7 +56,7 @@ def login_button(authorization_url, app_name, app_desc):
     st.markdown(
         f"""<a style='display: block; text-align: center;' href={authorization_url}>
         <h3>hejho</h3>
-        <img src="https://www.google.se/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png" width="100" height="50">
+        <img src="https://www.google.se/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png" width="100" height="60">
         </a>
         """,
         unsafe_allow_html=True,
