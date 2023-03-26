@@ -37,47 +37,25 @@ def login_button(authorization_url, app_name, app_desc):
     <div class="col-md-12 text-center">
         <a target="_target" href="{authorization_url}">
             <button type="button" class="btn-lg btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+            <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+            </svg>
             Logga in med Google</button>
         </a>
     </div>
     '''
     st.markdown(container, unsafe_allow_html=True)
 
-    # link_color = '''
-    # <style>a {color: hotpink;}</style>
-    # '''
-    # st.markdown(link_color, unsafe_allow_html=True)
-    # style = "<style>h3 {text-align: center; color: white;}</style>"
-    # st.markdown(style, unsafe_allow_html=True)
 
-    # st.subheader(f"[:white[Foo]]({authorization_url})")
-    # button_style = '''
-    # <style> 
-    #     .button {
-    #         background-color: #04AA6D;
-    #         border: none;
-    #         color: white;
-    #         padding: 20px;
-    #         text-align: center;
-    #         text-decoration: none;
-    #         display: inline-block;
-    #         font-size: 16px;
-    #         margin: 4px 2px;
-    #         border-radius: 2px;
-    # }
-    # </style>'''
-    # st.markdown(button_style, unsafe_allow_html=True)
-
-    # <p style="color:white;font-size:24px;">Logga in med Google</p>
-    img1 = "https://downloadr2.apkmirror.com/wp-content/uploads/2016/05/5735811c4301f.png"
+    # img1 = "https://downloadr2.apkmirror.com/wp-content/uploads/2016/05/5735811c4301f.png"
     
-    st.markdown(
-        f"""<a target="_self" style='display: block; text-align: center;' href={authorization_url}>
-        <img src={img1} width="75" height="75"><button style='bottom: 0; border: 2px #4285F4; border-radius: 5px; background-color: white; color: #4285F4; font-size:18px; font-weight: 600; font-family:sans-serif; padding: 8px 8px;' type="button">Logga in med Google</button>
-        </a>
-        """,
-        unsafe_allow_html=True,
-    )
+    # st.markdown(
+    #     f"""<a target="_self" style='display: block; text-align: center;' href={authorization_url}>
+    #     <img src={img1} width="75" height="75"><button style='bottom: 0; border: 2px #4285F4; border-radius: 5px; background-color: white; color: #4285F4; font-size:18px; font-weight: 600; font-family:sans-serif; padding: 8px 8px;' type="button">Logga in med Google</button>
+    #     </a>
+    #     """,
+    #     unsafe_allow_html=True,
+    # )
 
 def logout_button(button_text):
     if st.button(button_text):
