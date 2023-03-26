@@ -47,6 +47,8 @@ if st.session_state["authentication_status"] == None and "random_cookie_name" no
 st.write("")
 st.write("---")
 st.write("")
+st.write("")
+st.write("")
 
 
 if st.session_state["authentication_status"]:
