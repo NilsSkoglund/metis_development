@@ -50,6 +50,15 @@ def login_button(authorization_url, app_name, app_desc):
     st.markdown(style, unsafe_allow_html=True)
 
     st.subheader(f"[:white[Foo]]({authorization_url})")
+
+        #centered
+    st.markdown(
+        """<a style='display: block; text-align: center;' href="https://www.example.com/">
+        <h3>hejho</h3>
+        </a>
+        """,
+        unsafe_allow_html=True,
+)
     
 
 
