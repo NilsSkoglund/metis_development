@@ -72,7 +72,7 @@ def login_button(authorization_url, app_name, app_desc):
     st.markdown(
         f"""<a style='display: block; text-align: center;' href={authorization_url}>
         <img src="https://downloadr2.apkmirror.com/wp-content/uploads/2016/05/5735811c4301f.png" width="40" height="40">
-        <button style='border: none; border-radius: 5px; background-color: white; color: black; font-size:14px; font-weight: bold;' type="button">Logga in med Google</button>
+        <button style='border: none; border-radius: 5px; background-color: white; color: black; font-size:16px; font-weight: bold;' type="button">Logga in med Google</button>
         </a>
         """,
         unsafe_allow_html=True,
