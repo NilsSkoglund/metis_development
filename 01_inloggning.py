@@ -8,17 +8,15 @@ import extra_streamlit_components as stx
 from streamlit_lottie import st_lottie
 import requests
 
+cm = stx.CookieManager(key="init2")
+
+dev_init_session_state_vars.init_session_state()
 
 def load_lottieurl(url: str):
     r = requests.get(url)
     if r.status_code != 200:
         return None
     return r.json()
-
-cm = stx.CookieManager(key="init2")
-
-dev_init_session_state_vars.init_session_state()
-
 lottie_url = "https://assets5.lottiefiles.com/packages/lf20_bYskKBq3WY.json"
 lottie_json = load_lottieurl(lottie_url)
 st_lottie(lottie_json, height=200, width=200)
