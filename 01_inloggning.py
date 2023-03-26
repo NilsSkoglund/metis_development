@@ -7,6 +7,11 @@ from tools import google_oauth
 import extra_streamlit_components as stx
 from streamlit_lottie import st_lottie
 import requests
+from PIL import Image
+
+image = Image.open('logo.png')
+
+st.image(image)
 
 cm = stx.CookieManager(key="init2")
 
