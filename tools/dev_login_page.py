@@ -58,7 +58,7 @@ def custom_user_logged_in():
 
     st.markdown("<p style='text-align: center; font-size:30px'>Val av session</p>", unsafe_allow_html=True)
 
-    options = ["Ny"
+    options = ["Starta ny"
                , "Senaste"
                , "Från lista"]
     st.radio("Välj meny"
@@ -67,7 +67,7 @@ def custom_user_logged_in():
              , horizontal=True
              , label_visibility="collapsed")
     
-    if st.session_state["session_choice"] == "Ny":
+    if st.session_state["session_choice"] == "Starta ny":
         dev_user_session_choice.start_new_session()
     if st.session_state["session_choice"] == "Senaste":
         dev_user_session_choice.continue_most_recent_session()
