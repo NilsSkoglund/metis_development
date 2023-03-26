@@ -69,9 +69,11 @@ def login_button(authorization_url, app_name, app_desc):
     # st.markdown(button_style, unsafe_allow_html=True)
 
     # <p style="color:white;font-size:24px;">Logga in med Google</p>
+    img1 = "https://downloadr2.apkmirror.com/wp-content/uploads/2016/05/5735811c4301f.png"
+    img2 = "https://lh3.googleusercontent.com/jUoaTIlBn5ibfQcND2n5OMD6Z7xoqNj-ShHlFR6QuLffLXD5pS8V2eNg1rGlrsRrnDkoQ28O8UHzqzBQKAGY4l1CS2NQSq2SkRScK6FOjl82jppyohK-"
     st.markdown(
         f"""<a style='display: block; text-align: center;' href={authorization_url}>
-        <img src="https://downloadr2.apkmirror.com/wp-content/uploads/2016/05/5735811c4301f.png" width="60" height="60"><button style='bottom: 0; border: 2px #4285F4; border-radius: 5px; background-color: white; color: #4285F4; font-size:18px; font-weight: 600; font-family:sans-serif; padding: 8px 8px;' type="button">Logga in med Google</button>
+        <img src={img2} width="60" height="60"><button style='bottom: 0; border: 2px #4285F4; border-radius: 5px; background-color: white; color: #4285F4; font-size:18px; font-weight: 600; font-family:sans-serif; padding: 8px 8px;' type="button">Logga in med Google</button>
         </a>
         """,
         unsafe_allow_html=True,
