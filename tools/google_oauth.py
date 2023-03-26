@@ -29,9 +29,9 @@ def login_button(authorization_url, app_name, app_desc):
     st.markdown('''<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="sameorigin">''',
     unsafe_allow_html=True)
-    st.markdown(
-    """<p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>
-    """,
+    st.markdown('''
+    <p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>
+    ''',
     unsafe_allow_html=True,
 )
     container = f'''
