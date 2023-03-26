@@ -24,7 +24,7 @@ def img_to_html(img_path):
 st.markdown("""
     <style>
     .img-fluid {
-    max-width: 80%;
+    max-width: 50%;
     height: auto;
     }
     </style>
