@@ -9,7 +9,7 @@ from streamlit_lottie import st_lottie
 import requests
 from PIL import Image
 
-image = Image.open('logo.png')
+image = Image.open('logo2.png')
 
 st.image(image)
 
