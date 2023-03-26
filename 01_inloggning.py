@@ -68,7 +68,7 @@ if st.session_state["authentication_status"]:
 
 
 if st.session_state["authentication_status"] != True:
-    co1, col2, col3 = st.columns([1,5,1])
+    co1, col2, col3 = st.columns([1,6,1])
     with col2:
 
         with st.expander("Visa övriga alternativ"):
