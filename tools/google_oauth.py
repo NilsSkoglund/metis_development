@@ -33,6 +33,20 @@ def login_button(authorization_url, app_name, app_desc):
     st.markdown('''<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="sameorigin">''',
     unsafe_allow_html=True)
+
+    container = f'''
+    <div class="col-md-12 text-center">
+        <iframe src="static/login_popup.html#{authorization_url}" width="200" height="50" frameborder="0" scrolling="no" style="border:none;"></iframe>
+    </div>
+    '''
+
+    st.markdown(container, unsafe_allow_html=True)
+
+
+def login_button_temp2(authorization_url, app_name, app_desc):
+    st.markdown('''<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="sameorigin">''',
+    unsafe_allow_html=True)
     
     js = f"""
     <script>
