@@ -3,6 +3,7 @@ import streamlit as st
 import streamlit_authenticator as stauth
 from tools import dev_user_session_choice
 from tools import dev_database_interactions
+from tools import google_oauth
 import yagmail
 import time
 
@@ -35,9 +36,13 @@ def custom_authenticate():
             st.session_state["authenticator"].login('Login', 'main')
 
 def custom_user_logged_in():
-    with st.expander("Användarprofil"):
+    with st.expander("Logga ut"):
         username = st.session_state["username"]
-        st.write(f'**Användarnamn:** {username}')
+        st.write(f'**Inloggad användare:** {username}')
+        if "google" not in st.session_state:
+            st.session_state["authenticator"].logout('Logout', 'main')
+        else:
+            google_oauth.logout_button("Logga ut")
 
         # info = st.session_state["deta"].Base("users_db").get(username)
         # st.write(f'**Namn:** {info["name"]}')

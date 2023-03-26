@@ -42,11 +42,7 @@ if st.session_state["authentication_status"]:
     st.session_state["db"] =\
     st.session_state["deta"].Base(st.session_state["username"])
     time.sleep(1)
-    if "google" not in st.session_state:
-        st.session_state["authenticator"].logout('Logout', 'main')
-    else:
-        google_oauth.logout_button("Logga ut")
-        
+
     dev_login_page.custom_user_logged_in()
 
 # fel inloggningsuppgifter
