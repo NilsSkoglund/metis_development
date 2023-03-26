@@ -50,10 +50,8 @@ def custom_user_logged_in():
 
         # st.session_state["authenticator"].logout('Logout', 'main')
         # time.sleep(1)
-
-    st.write("---")
-
     # connect to database
+    
     st.session_state["db"] =\
     st.session_state["deta"].Base(st.session_state["username"])
     time.sleep(1)
