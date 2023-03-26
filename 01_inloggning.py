@@ -20,7 +20,7 @@ def img_to_html(img_path):
       img_to_bytes(img_path)
     )
     return img_html
-st.markdown("<p style='text-align: center; color: grey;'>"+img_to_html('logo5_sv.png')+"</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: grey;'>"+img_to_html('logo6_sv.png')+"</p>", unsafe_allow_html=True)
 
 cm = stx.CookieManager(key="init2")
 
