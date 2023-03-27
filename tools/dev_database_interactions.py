@@ -88,7 +88,7 @@ def wells_update_db():
     st.session_state["db"].update(\
                             {name_perc:temp_dct_perc}\
                             , key=st.session_state["db_session_key"])
-    time.sleep(0.5)
+    #time.sleep(0.5)
 
 def perc_update_db():
     dct_perc = st.session_state["dct_perc"]
