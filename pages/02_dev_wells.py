@@ -52,14 +52,19 @@ else:
         set_session_state_for_questionnaire_from_db(name_wells)
     
     st.subheader(f"Wells' Lungemboli - {namn}")
-    for i, j in enumerate(dct_wells.items()):
-        wells_x = f"{name_wells}_{i}"
-        st.checkbox(
-            j[0]\
-            ,key=wells_x\
-            , on_change=dev_database_interactions.wells_update_db
-            , disabled=is_disabled
-            )
+
+    @st.cache_data
+    def display_dct_wells(dct):
+        for i, j in enumerate(dct.items()):
+            wells_x = f"{name_wells}_{i}"
+            st.checkbox(
+                j[0]\
+                ,key=wells_x\
+                , on_change=dev_database_interactions.wells_update_db
+                , disabled=is_disabled
+                )
+        
+    display_dct_wells(dct_wells)
         
     st.write("---")
 
