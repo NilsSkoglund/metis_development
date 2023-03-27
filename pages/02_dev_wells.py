@@ -53,7 +53,6 @@ else:
     
     st.subheader(f"Wells' Lungemboli - {namn}")
 
-    @st.cache_data(suppress_st_warning=True)
     def display_dct_wells(dct):
         for i, j in enumerate(dct.items()):
             wells_x = f"{name_wells}_{i}"
