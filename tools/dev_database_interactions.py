@@ -70,7 +70,7 @@ def wells_update_db():
     st.session_state["db"].update(\
                             {name_wells:temp_dct_wells}\
                             , key=st.session_state["db_session_key"])
-    time.sleep(0.5)
+    #time.sleep(0.5)
 
     temp_dct_perc = {}
     for i, j in enumerate(dct_perc):
