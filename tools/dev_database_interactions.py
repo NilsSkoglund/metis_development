@@ -101,7 +101,7 @@ def perc_update_db():
     st.session_state["db"].update(\
                             {name_perc:temp_dct_perc}\
                             , key=st.session_state["db_session_key"])
-    time.sleep(0.5)
+    #time.sleep(0.5)
 
 def get_config_cred():
     db = st.session_state["deta"].Base("users_db")
