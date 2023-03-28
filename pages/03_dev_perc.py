@@ -51,7 +51,7 @@ else:
     name_perc = st.session_state["name_perc"]
 
     
-    #dev_database_interactions.set_sess_state_perc()
+    dev_database_interactions.sync_perc_wells()
 
     dev_database_interactions.\
         set_session_state_for_questionnaire_from_db(name_perc)

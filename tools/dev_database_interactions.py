@@ -72,12 +72,25 @@ def wells_update_db():
                             , key=st.session_state["db_session_key"])
     #time.sleep(0.5)
 
+
+    #time.sleep(0.5)
+
+def sync_perc_wells():
+    dct_wells = st.session_state["dct_wells"]
+    name_wells = st.session_state["name_wells"]
+
+    dct_perc = st.session_state["dct_perc"]
+    name_perc = st.session_state["name_perc"]
+
     temp_dct_perc = {}
     for i, j in enumerate(dct_perc):
         if i <= 4: 
             key_perc = f"{name_perc}_{i}"
             key_wells = f"{name_wells}_{i}"
-            temp_dct_perc[key_perc] = st.session_state[key_wells]
+            value_wells = st.session_state["db"]\
+                            .get(st.session_state['db_session_key'])\
+                            .get(name_wells).get(key_wells)
+            temp_dct_perc[key_perc] = value_wells
         else:
             key_perc = f"{name_perc}_{i}"
             value_perc = st.session_state["db"]\
@@ -88,30 +101,8 @@ def wells_update_db():
     st.session_state["db"].update(\
                             {name_perc:temp_dct_perc}\
                             , key=st.session_state["db_session_key"])
-    #time.sleep(0.5)
 
-# def set_sess_state_perc():
-#     #dct_wells = st.session_state["dct_wells"]
-#     name_wells = st.session_state["name_wells"]
 
-#     dct_perc = st.session_state["dct_perc"]
-#     name_perc = st.session_state["name_perc"]
-#     temp_dct_perc = {}
-#     for i, j in enumerate(dct_perc):
-#         if i <= 4: 
-#             key_perc = f"{name_perc}_{i}"
-#             key_wells = f"{name_wells}_{i}"
-#             temp_dct_perc[key_perc] = st.session_state[key_wells]
-#         else:
-#             key_perc = f"{name_perc}_{i}"
-#             value_perc = st.session_state["db"]\
-#                             .get(st.session_state['db_session_key'])\
-#                             .get(name_perc).get(key_perc)
-#             temp_dct_perc[key_perc] = value_perc
-
-#     st.session_state["db"].update(\
-#                             {name_perc:temp_dct_perc}\
-#                             , key=st.session_state["db_session_key"])
 
 def perc_update_db():
     dct_perc = st.session_state["dct_perc"]
