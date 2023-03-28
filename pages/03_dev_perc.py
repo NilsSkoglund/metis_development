@@ -51,7 +51,9 @@ else:
     name_perc = st.session_state["name_perc"]
 
     
-    dev_database_interactions.sync_perc_wells()
+    if "synced_perc_wells" not in st.session_state:
+        dev_database_interactions.sync_perc_wells()
+        st.session_state["synced_perc_wells"] = True
 
     dev_database_interactions.\
         set_session_state_for_questionnaire_from_db(name_perc)
