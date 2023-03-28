@@ -1,5 +1,6 @@
 import streamlit as st
 import time
+# import asyncio
 
 def register_new_session_in_db():
     dct_wells = st.session_state["dct_wells"]
