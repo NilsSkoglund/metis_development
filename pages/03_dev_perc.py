@@ -58,10 +58,20 @@ else:
 
     # create checkboxes
     for i, j in enumerate(dct_perc.items()):
-        perc_x = f"{name_perc}_{i}"
-        st.checkbox(
-            j[0]
-            ,key=perc_x
-            ,disabled=is_disabled
-            , on_change=dev_database_interactions.perc_update_db
-            )
+
+        if i <= 4:
+            perc_x = f"{name_perc}_{i}"
+            st.checkbox(
+                j[0]
+                ,key=perc_x
+                ,disabled=True
+                , on_change=dev_database_interactions.perc_update_db
+                )
+        else:
+            perc_x = f"{name_perc}_{i}"
+            st.checkbox(
+                j[0]
+                ,key=perc_x
+                ,disabled=is_disabled
+                , on_change=dev_database_interactions.perc_update_db
+                )
