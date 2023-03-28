@@ -55,16 +55,10 @@ else:
         dev_database_interactions.sync_perc_wells()
         st.session_state["synced_perc_wells"] = True
 
-    def is_wells_changed():
-        wells = st.session_state["db"]\
-                            .get(st.session_state['db_session_key'])\
-                            .get(st.session_state["name_wells"])
-        
-        if list(wells.values())[:5] == st.session_state[f"perc_sync_list"]:
-            return False
-        return True
-    
-    if is_wells_changed:
+        if "wells_sync_list" not in st.session_state:
+            st.session_state["wells_sync_list"] = ""
+
+    if st.session_state["wells_sync_list"] != st.session_state[f"perc_sync_list"]:
         dev_database_interactions.sync_perc_wells()
 
     dev_database_interactions.\
