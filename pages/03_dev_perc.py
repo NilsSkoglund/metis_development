@@ -53,7 +53,6 @@ else:
     
     dev_database_interactions.sync_perc_wells()
 
-
     dev_database_interactions.\
         set_session_state_for_questionnaire_from_db(name_perc)
 
