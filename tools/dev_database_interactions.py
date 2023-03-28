@@ -71,7 +71,7 @@ def wells_update_db():
                             {name_wells:temp_dct_wells}\
                             , key=st.session_state["db_session_key"])
     
-    #time.sleep(0.5)
+    time.sleep(0.5)
 
 
     #time.sleep(0.5)
