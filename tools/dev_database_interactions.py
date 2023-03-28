@@ -70,6 +70,7 @@ def wells_update_db():
     st.session_state["db"].update(\
                             {name_wells:temp_dct_wells}\
                             , key=st.session_state["db_session_key"])
+    
     #time.sleep(0.5)
 
 
@@ -101,8 +102,6 @@ def sync_perc_wells():
     st.session_state["db"].update(\
                             {name_perc:temp_dct_perc}\
                             , key=st.session_state["db_session_key"])
-    
-    st.session_state[f"perc_sync_list"] = list(temp_dct_perc.values())[:5]
     
 
     
