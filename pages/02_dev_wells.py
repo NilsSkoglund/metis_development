@@ -10,7 +10,7 @@ from tools import dev_helpers
 dev_init_session_state_vars.init_session_state()
 
 with st.sidebar:
-    image = Image.open(f"pages/tågstationer wells.png")
+    image = Image.open(f"pages/tågstation wells v2.png")
     st.image(image)
 
 
