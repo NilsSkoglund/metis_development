@@ -4,7 +4,7 @@ from tools import dev_database_interactions
 from PIL import Image
 
 with st.sidebar:
-    image = Image.open(f"pages/tågstationer perc.png")
+    image = Image.open(f"pages/tågstation v2 perc.png")
     st.image(image)
 
 if "authentication_status" not in st.session_state:
