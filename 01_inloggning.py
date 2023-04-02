@@ -11,9 +11,6 @@ from PIL import Image
 import base64
 from pathlib import Path
 
-image = Image.open(f"överblick.png")
-st.image(image)
-
 cm = stx.CookieManager(key="init2")
 dev_init_session_state_vars.init_session_state()
 
@@ -157,3 +154,6 @@ if st.session_state["authentication_status"] != True:
                     if st.session_state["options_credentials_2"] == "Glömt användarnamn":
                         st.info("Ange den kopplade emailen så visas användarnamnet.")
                         dev_login_page.custom_forgot_username()
+
+image = Image.open(f"överblick.png")
+st.image(image)
