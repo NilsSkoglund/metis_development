@@ -11,6 +11,9 @@ from PIL import Image
 import base64
 from pathlib import Path
 
+image = Image.open(f"överblick.png")
+st.image(image)
+
 cm = stx.CookieManager(key="init2")
 dev_init_session_state_vars.init_session_state()
 
@@ -53,8 +56,6 @@ lottie_url = "https://assets5.lottiefiles.com/packages/lf20_bYskKBq3WY.json"
 lottie_json = load_lottieurl(lottie_url)
 with st.sidebar:
     st_lottie(lottie_json)
-    image = Image.open(f"överblick.png")
-    st.image(image)
 
 # st.markdown('''<p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>''', unsafe_allow_html=True)
 
