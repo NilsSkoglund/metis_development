@@ -40,9 +40,7 @@ else:
              , key="wells_radio"
              , horizontal=True)
     
-    is_disabled = False
-    if st.session_state["wells_radio"] == "Avslutad":
-        is_disabled = True
+    
     namn = st.session_state["db"]\
                             .get(st.session_state['db_session_key'])\
                             .get("name")
@@ -55,14 +53,23 @@ else:
     
     st.subheader(f"Wells' Lungemboli - {namn}")
 
+    is_avslutad = False
+    if st.session_state["wells_radio"] == "Avslutad":
+        is_avslutad = True
+
+    if 'request_in_progress' not in st.session_state:
+        st.session_state['request_in_progress'] = False
+    
+
     def display_dct_wells(dct):
         for i, j in enumerate(dct.items()):
+            is_in_progress = st.session_state['request_in_progress']
             wells_x = f"{name_wells}_{i}"
             st.checkbox(
                 j[0]\
                 ,key=wells_x\
                 , on_change=dev_database_interactions.wells_update_db
-                , disabled=is_disabled
+                , disabled=True in [is_avslutad, is_in_progress]
                 )
 
         

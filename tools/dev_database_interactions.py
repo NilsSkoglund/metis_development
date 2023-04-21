@@ -57,6 +57,11 @@ def set_session_state_for_questionnaire_from_db(questionnaire):
         st.session_state[key] = value
 
 def wells_update_db():
+    # Set request_in_progress flag to True
+    st.session_state['request_in_progress'] = True
+
+    # Process the request here
+    
     dct_wells = st.session_state["dct_wells"]
     name_wells = st.session_state["name_wells"]
 
@@ -72,8 +77,9 @@ def wells_update_db():
                             {name_wells:temp_dct_wells}\
                             , key=st.session_state["db_session_key"])
     
-    time.sleep(0.5)
-
+    #time.sleep(0.5)
+    # Set request_in_progress flag back to False
+    st.session_state['request_in_progress'] = False
 
     
 
