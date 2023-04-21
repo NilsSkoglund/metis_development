@@ -112,7 +112,7 @@ if st.session_state["authentication_status"] != True:
                 }
             </style>
             """
-            #st.markdown(hide_element_css, unsafe_allow_html=True)
+            st.markdown(hide_element_css, unsafe_allow_html=True)
             
             if st.session_state["options_inloggning_1"] == "Logga in med registrerad användare":
                 dev_login_page.custom_authenticate()
