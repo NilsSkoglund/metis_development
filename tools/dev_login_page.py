@@ -64,7 +64,7 @@ def custom_user_logged_in():
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
+            width: 50%;
         }
         .css-5uatcg.edgvbvh10 button {
             margin-top: 10px;
