@@ -43,16 +43,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-
-def load_lottieurl(url: str):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
-lottie_url = "https://assets5.lottiefiles.com/packages/lf20_bYskKBq3WY.json"
-lottie_json = load_lottieurl(lottie_url)
-with st.sidebar:
-    st_lottie(lottie_json)
+################################## Dr Lottie ##################################
+# def load_lottieurl(url: str):
+#     r = requests.get(url)
+#     if r.status_code != 200:
+#         return None
+#     return r.json()
+# lottie_url = "https://assets5.lottiefiles.com/packages/lf20_bYskKBq3WY.json"
+# lottie_json = load_lottieurl(lottie_url)
+# with st.sidebar:
+#     st_lottie(lottie_json)
 
 # st.markdown('''<p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>''', unsafe_allow_html=True)
 
