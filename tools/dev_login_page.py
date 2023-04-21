@@ -57,6 +57,22 @@ def custom_user_logged_in():
     time.sleep(1)
 
     st.markdown("<p style='text-align: center; font-size:30px'>Starta ny session</p>", unsafe_allow_html=True)
+        # Custom CSS to center the button
+    center_button_css = """
+    <style>
+        .css-5uatcg.edgvbvh10 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .css-5uatcg.edgvbvh10 button {
+            margin-top: 10px;
+        }
+    </style>
+    """
+    st.markdown(center_button_css, unsafe_allow_html=True)
+    
     dev_user_session_choice.start_new_session()
     st.write("---")
     st.markdown("<p style='text-align: center; font-size:30px'>Läs in tidigare session</p>", unsafe_allow_html=True)
