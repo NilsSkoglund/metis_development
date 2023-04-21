@@ -92,9 +92,9 @@ if st.session_state["authentication_status"]:
 if st.session_state["authentication_status"] != True:
     co1, col2, col3 = st.columns([1,6,1])
     with col2:
-        with st.expander("Övriga alternativ", expanded=True):
+        with st.expander("Övriga inloggningsalternativ", expanded=True):
 
-            dev_login_page.custom_authenticate()
+            #dev_login_page.custom_authenticate()
 
 
             # fel inloggningsuppgifter
@@ -110,6 +110,8 @@ if st.session_state["authentication_status"] != True:
                         , horizontal=False
                         , label_visibility="hidden")
                 
+                if st.session_state["options_inloggning_1"] == "Logga in med registrerad användare":
+                    dev_login_page.custom_authenticate()
                 if st.session_state["options_inloggning_1"] == "Registrera ny användare":
                     dev_login_page.custom_register_user()
                 if st.session_state["options_inloggning_1"] == "Glömt inloggningsuppgifter":
@@ -140,6 +142,8 @@ if st.session_state["authentication_status"] != True:
                         , horizontal=False
                         , label_visibility="hidden")
                 
+                if st.session_state["options_inloggning_2"] == "Logga in med registrerad användare":
+                    dev_login_page.custom_authenticate()
                 if st.session_state["options_inloggning_2"] == "Registrera ny användare":
                     dev_login_page.custom_register_user()
                 if st.session_state["options_inloggning_2"] == "Glömt inloggningsuppgifter":
