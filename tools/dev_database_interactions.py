@@ -57,23 +57,23 @@ def set_session_state_for_questionnaire_from_db(questionnaire):
         st.session_state[key] = value
 
 
-import time
-from functools import wraps
+# import time
+# from functools import wraps
 
-def debounce(wait):
-    def decorator(fn):
-        @wraps(fn)
-        def debounced(*args, **kwargs):
-            if hasattr(debounced, '_last_call'):
-                diff = time.time() - debounced._last_call
-                if diff < wait:
-                    time.sleep(wait - diff)
-            debounced._last_call = time.time()
-            return fn(*args, **kwargs)
-        return debounced
-    return decorator
+# def debounce(wait):
+#     def decorator(fn):
+#         @wraps(fn)
+#         def debounced(*args, **kwargs):
+#             if hasattr(debounced, '_last_call'):
+#                 diff = time.time() - debounced._last_call
+#                 if diff < wait:
+#                     time.sleep(wait - diff)
+#             debounced._last_call = time.time()
+#             return fn(*args, **kwargs)
+#         return debounced
+#     return decorator
 
-@debounce(1)
+# @debounce(1)
 def wells_update_db():
     
     dct_wells = st.session_state["dct_wells"]
