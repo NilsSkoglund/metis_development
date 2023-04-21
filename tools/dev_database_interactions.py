@@ -56,6 +56,24 @@ def set_session_state_for_questionnaire_from_db(questionnaire):
         value = dict_from_db[key]
         st.session_state[key] = value
 
+
+import time
+from functools import wraps
+
+def debounce(wait):
+    def decorator(fn):
+        @wraps(fn)
+        def debounced(*args, **kwargs):
+            if hasattr(debounced, '_last_call'):
+                diff = time.time() - debounced._last_call
+                if diff < wait:
+                    time.sleep(wait - diff)
+            debounced._last_call = time.time()
+            return fn(*args, **kwargs)
+        return debounced
+    return decorator
+
+@debounce(0.5)
 def wells_update_db():
     # Set request_in_progress flag to True
     st.session_state['request_in_progress'] = True
