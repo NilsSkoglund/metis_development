@@ -39,7 +39,6 @@ else:
              , index=st.session_state["wells_radio_index"]
              , key="wells_radio"
              , horizontal=True)
-    st.write("---")
     
     namn = st.session_state["db"]\
                             .get(st.session_state['db_session_key'])\
@@ -85,6 +84,7 @@ else:
     }
 
     display_dct_wells(dct_lungemboli)
+    st.write("---")
 
     total_score = dev_helpers.calc_score(dct_lungemboli, name_wells)
     dev_helpers.lungemboli_display_txt(total_score)
