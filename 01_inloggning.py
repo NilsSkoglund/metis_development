@@ -103,7 +103,7 @@ if st.session_state["authentication_status"] != True:
                     , options
                     , key="options_inloggning_1"
                     , horizontal=False
-                    , label_visibility="hidden")
+                    , label_visibility="collapsed")
             
             if st.session_state["options_inloggning_1"] == "Logga in med registrerad användare":
                 dev_login_page.custom_authenticate()
