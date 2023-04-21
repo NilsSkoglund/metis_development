@@ -105,6 +105,15 @@ if st.session_state["authentication_status"] != True:
                     , horizontal=False
                     , label_visibility="collapsed")
             
+            hide_element_css = """
+            <style>
+                .element-container.css-1ch4d1a.e1tzin5v3 {
+                    display: none !important;
+                }
+            </style>
+            """
+            st.markdown(hide_element_css, unsafe_allow_html=True)
+            
             if st.session_state["options_inloggning_1"] == "Logga in med registrerad användare":
                 dev_login_page.custom_authenticate()
                 if st.session_state["authentication_status"] == False:
