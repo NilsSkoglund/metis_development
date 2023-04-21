@@ -91,8 +91,12 @@ if st.session_state["authentication_status"]:
 
 if st.session_state["authentication_status"] != True:
     co1, col2, col3 = st.columns([1,6,1])
+    if "random_cookie_name" not in cm.get_all():
+        expand = False
+    else:
+        expand = True
     with col2:
-        with st.expander("Övriga inloggningsalternativ", expanded=True):
+        with st.expander("Övriga inloggningsalternativ", expanded=expand):
 
             #dev_login_page.custom_authenticate()
 
