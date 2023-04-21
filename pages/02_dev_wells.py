@@ -72,7 +72,6 @@ else:
                 , disabled=True in [is_avslutad, is_in_progress]
                 )
         
-    st.write("---")
 
     dct_lungemboli = {
     "Kliniska tecken på DVT": 3,
@@ -83,8 +82,9 @@ else:
     "LE mer sannolik än annan diagnos": 3,
     "Malignitet behandlad inom 6 mån alt. palliation": 1
     }
-    
+
     display_dct_wells(dct_lungemboli)
+    st.write("---")
 
     total_score = dev_helpers.calc_score(dct_lungemboli, name_wells)
     dev_helpers.lungemboli_display_txt(total_score)
