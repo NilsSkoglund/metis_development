@@ -55,9 +55,8 @@ st.markdown("""
 #     st_lottie(lottie_json)
 
 # st.markdown('''<p style='text-align: center; font-size: 32px;'>Metis hjälpverktyg för lungemboli</p>''', unsafe_allow_html=True)
-cookies = cm.get_all()
 
-if st.session_state["authentication_status"] == None and "random_cookie_name" not in cookies:
+if st.session_state["authentication_status"] == None and "random_cookie_name" not in cm.get_all():
 
     client_id = "1047167822945-ohs32k407e6ej3v4ont64rsd3tc6sktf.apps.googleusercontent.com"
     client_secret = "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"
@@ -92,12 +91,8 @@ if st.session_state["authentication_status"]:
 
 if st.session_state["authentication_status"] != True:
     co1, col2, col3 = st.columns([1,6,1])
-    if "random_cookie_name" not in cookies:
-        expand = False
-    else:
-        expand = True
     with col2:
-        with st.expander("Övriga inloggningsalternativ", expanded=expand):
+        with st.expander("Övriga inloggningsalternativ", expanded=True):
 
             #dev_login_page.custom_authenticate()
 
