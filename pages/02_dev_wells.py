@@ -71,8 +71,6 @@ else:
                 , on_change=dev_database_interactions.wells_update_db
                 , disabled=True in [is_avslutad, is_in_progress]
                 )
-            
-    display_dct_wells()
         
     st.write("---")
 
@@ -85,6 +83,8 @@ else:
     "LE mer sannolik än annan diagnos": 3,
     "Malignitet behandlad inom 6 mån alt. palliation": 1
     }
+    
+    display_dct_wells(dct_lungemboli)
 
     total_score = dev_helpers.calc_score(dct_lungemboli, name_wells)
     dev_helpers.lungemboli_display_txt(total_score)
