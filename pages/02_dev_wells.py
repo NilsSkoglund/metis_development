@@ -57,16 +57,13 @@ else:
 
     def display_dct_wells(dct):
         for i, j in enumerate(dct.items()):
-            try:
-                wells_x = f"{name_wells}_{i}"
-                st.checkbox(
-                    j[0]\
-                    ,key=wells_x\
-                    , on_change=dev_database_interactions.wells_update_db
-                    , disabled=is_disabled
-                    )
-            except:
-                pass
+            wells_x = f"{name_wells}_{i}"
+            st.checkbox(
+                j[0]\
+                ,key=wells_x\
+                , on_change=dev_database_interactions.wells_update_db
+                , disabled=is_disabled
+                )
 
         
     st.write("---")
