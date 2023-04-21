@@ -107,7 +107,7 @@ if st.session_state["authentication_status"] != True:
             
             hide_element_css = """
             <style>
-                .element-container.css-1ch4d1a.e1tzin5v3 {
+                .element-container.css-1ch4d1a.e1tzin5v3:nth-of-type(2) {
                     display: none !important;
                 }
             </style>
