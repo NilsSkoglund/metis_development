@@ -57,22 +57,23 @@ def custom_user_logged_in():
     time.sleep(1)
 
     st.markdown("<p style='text-align: center; font-size:30px'>Val av session</p>", unsafe_allow_html=True)
+    dev_user_session_choice.start_new_session()
 
-    options = ["Starta ny"
-               , "Senaste"
-               , "Från lista"]
-    st.radio("Välj meny"
-             , options
-             , key="session_choice"
-             , horizontal=True
-             , label_visibility="collapsed")
+    # options = ["Starta ny"
+    #            , "Senaste"
+    #            , "Från lista"]
+    # st.radio("Välj meny"
+    #          , options
+    #          , key="session_choice"
+    #          , horizontal=True
+    #          , label_visibility="collapsed")
     
-    if st.session_state["session_choice"] == "Starta ny":
-        dev_user_session_choice.start_new_session()
-    if st.session_state["session_choice"] == "Senaste":
-        dev_user_session_choice.continue_most_recent_session()
-    if st.session_state["session_choice"] == "Från lista":
-        dev_user_session_choice.choose_session_from_list()
+    # if st.session_state["session_choice"] == "Starta ny":
+    #     dev_user_session_choice.start_new_session()
+    # if st.session_state["session_choice"] == "Senaste":
+    #     dev_user_session_choice.continue_most_recent_session()
+    # if st.session_state["session_choice"] == "Från lista":
+    #     dev_user_session_choice.choose_session_from_list()
 
 def custom_register_user():
     try:
