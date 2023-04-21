@@ -114,6 +114,7 @@ if st.session_state["authentication_status"] != True:
                 st.write("")
                 dev_login_page.custom_register_user()
             if st.session_state["options_inloggning_1"] == "Glömt inloggningsuppgifter":
+                st.write("")
                 st.write("---")
                 options_credentials = ["Glömt lösenord", "Glömt användarnamn"]
                 st.radio("Glömt inloggningsuppgifter"
