@@ -56,11 +56,7 @@ else:
     is_avslutad = False
     if st.session_state["wells_radio"] == "Avslutad":
         is_avslutad = True
-
-    if 'request_in_progress' not in st.session_state:
-        st.session_state['request_in_progress'] = False
     
-
     def display_dct_wells(dct):
         for i, j in enumerate(dct.items()):
             is_in_progress = st.session_state['request_in_progress']
@@ -69,7 +65,7 @@ else:
                 j[0]\
                 ,key=wells_x\
                 , on_change=dev_database_interactions.wells_update_db
-                , disabled=True in [is_avslutad, is_in_progress]
+                , disabled=is_avslutad
                 )
         
 
