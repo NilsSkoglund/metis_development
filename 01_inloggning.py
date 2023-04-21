@@ -110,6 +110,8 @@ if st.session_state["authentication_status"] != True:
                 if st.session_state["authentication_status"] == False:
                     st.error('Username/password is incorrect')
             if st.session_state["options_inloggning_1"] == "Registrera ny användare":
+                st.write("")
+                st.write("")
                 dev_login_page.custom_register_user()
             if st.session_state["options_inloggning_1"] == "Glömt inloggningsuppgifter":
                 st.write("---")
