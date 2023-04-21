@@ -53,7 +53,7 @@ def start_new_session():
     
     # User is done and presses a button to enter the session / go to next page
      # widget - new session state variable
-    st.button("Gå vidare", key="new_session_next_page")
+    st.button("Starta ny session", key="new_session_next_page")
 
     # if user presses button, we want to write info for new session to db ...
     # before entering the session / going to the next page
