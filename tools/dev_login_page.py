@@ -59,7 +59,7 @@ def custom_user_logged_in():
     st.markdown("<p style='text-align: center; font-size:30px'>Val av session</p>", unsafe_allow_html=True)
     dev_user_session_choice.start_new_session()
     st.write("---")
-    dev_user_session_choice.continue_most_recent_session()
+    dev_user_session_choice.choose_session_from_list()
 
     # options = ["Starta ny"
     #            , "Senaste"
