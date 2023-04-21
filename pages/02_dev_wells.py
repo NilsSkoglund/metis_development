@@ -64,8 +64,10 @@ else:
                 , on_change=dev_database_interactions.wells_update_db
                 , disabled=is_disabled
                 )
-        
-    display_dct_wells(dct_wells)
+    try:
+        display_dct_wells(dct_wells)
+    except:
+        pass
         
     st.write("---")
 
