@@ -73,7 +73,7 @@ def debounce(wait):
         return debounced
     return decorator
 
-@debounce(0.5)
+@debounce(1)
 def wells_update_db():
     
     dct_wells = st.session_state["dct_wells"]
