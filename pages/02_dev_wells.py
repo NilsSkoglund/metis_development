@@ -71,7 +71,8 @@ else:
                 , on_change=dev_database_interactions.wells_update_db
                 , disabled=True in [is_avslutad, is_in_progress]
                 )
-
+            
+    display_dct_wells()
         
     st.write("---")
 
