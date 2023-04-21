@@ -85,8 +85,8 @@ if st.session_state["authentication_status"]:
 
     dev_login_page.custom_user_logged_in()
         
-    image = Image.open(f"överblick.png")
-    st.image(image)
+    # image = Image.open(f"överblick.png")
+    # st.image(image)
 
 
 if st.session_state["authentication_status"] != True:
